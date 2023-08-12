@@ -24,4 +24,40 @@
     Private Sub SUPPLIERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Butt_Now_Click(sender, e)
     End Sub
+
+    Private Sub Btn_save_Click(sender As Object, e As EventArgs) Handles Btn_save.Click
+        ' قيود ادخال----------------------------------------------------------------
+        If Tex_name.Text = "" Then
+            MessageBox.Show("por favor escribe Nombre de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Tex_name.Select()
+            Exit Sub
+
+        End If
+        If Text_phone.Text = "" Then
+            MessageBox.Show(" por favor escribe Título de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Text_phone.Select()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------
+        'code save------------------------------------------------------------------
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            MessageBox.Show(" El recurso ya existe ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            dt.Rows.Add()
+            Dim add_ As Integer = dt.Rows.Count - 1
+            dt.Rows(add_).Item("IMP_CODE") = Text_code.Text
+            dt.Rows(add_).Item("IMP_NAME ") = Tex_name.Text
+            dt.Rows(add_).Item("IMP_PHONE ") = Text_phone.Text
+            dt.Rows(add_).Item("IMP_ADRESS ") = Text_adress.Text
+            dt.Rows(add_).Item("NOTES ") = Text_notes.Text
+            dt.Rows(add_).Item("STATES ") = Text_state.Text
+            dt.Rows(add_).Item("COMPANY ") = Text_diff.Text
+            dt.Rows(add_).Item("DEBIT ") = Text_debit.Text
+            dt.Rows(add_).Item("CREDIT ") = Text_credit.Text
+        End If
+
+    End Sub
 End Class

@@ -126,6 +126,7 @@ Partial Class SUPPLIERS
         ' 
         ' Text_diff
         ' 
+        Text_diff.BackColor = Color.White
         Text_diff.Location = New Point(685, 38)
         Text_diff.Name = "Text_diff"
         Text_diff.ReadOnly = True
@@ -144,6 +145,7 @@ Partial Class SUPPLIERS
         ' 
         ' Text_credit
         ' 
+        Text_credit.BackColor = Color.White
         Text_credit.Location = New Point(388, 38)
         Text_credit.Name = "Text_credit"
         Text_credit.ReadOnly = True
@@ -163,6 +165,7 @@ Partial Class SUPPLIERS
         ' 
         ' Text_debit
         ' 
+        Text_debit.BackColor = Color.White
         Text_debit.Location = New Point(103, 38)
         Text_debit.Name = "Text_debit"
         Text_debit.ReadOnly = True
