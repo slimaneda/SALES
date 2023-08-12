@@ -66,4 +66,69 @@
             Butt_Now_Click(sender, e)
         End If
     End Sub
+
+    Private Sub Btn_edit_Click(sender As Object, e As EventArgs) Handles Btn_edit.Click
+        If Tex_name.Text = "" Then
+            MessageBox.Show("por favor escribe Nombre de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Tex_name.Select()
+            Exit Sub
+
+        End If
+        If Text_phone.Text = "" Then
+            MessageBox.Show(" por favor escribe Título de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Text_phone.Select()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------
+        'code save------------------------------------------------------------------
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            'dt.Rows.Add()
+            Dim update_ As Integer = BindingContext(dt).Position
+            dt.Rows(update_).Item("IMP_CODE") = Text_code.Text
+            dt.Rows(update_).Item("IMP_NAME") = Tex_name.Text
+            dt.Rows(update_).Item("IMP_PHONE") = Text_phone.Text
+            dt.Rows(update_).Item("IMP_ADRESS") = Text_adress.Text
+            dt.Rows(update_).Item("NOTES") = Text_notes.Text
+            dt.Rows(update_).Item("STATES") = True
+            dt.Rows(update_).Item("COMPANY") = Text_company.Text
+            dt.Rows(update_).Item("DEBIT") = Val(Text_debit.Text)
+            dt.Rows(update_).Item("CREDIT") = Val(Text_credit.Text)
+            da.Update(dt)
+            dt.AcceptChanges()
+            MessageBox.Show(" تم تعديل بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Butt_Now_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub Btn_delete_Click(sender As Object, e As EventArgs) Handles Btn_delete.Click
+
+        If MessageBox.Show(" هل ترغب في الحذف", " رسالة تنبه", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then Exit Sub
+
+
+        'code save------------------------------------------------------------------
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            'dt.Rows.Add()
+            Dim update_ As Integer = BindingContext(dt).Position
+
+            da.Update(dt)
+            dt.AcceptChanges()
+            MessageBox.Show(" تم الحذف بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Butt_Now_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
+        Me.Close()
+
+    End Sub
 End Class
