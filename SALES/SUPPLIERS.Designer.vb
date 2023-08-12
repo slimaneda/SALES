@@ -37,7 +37,7 @@ Partial Class SUPPLIERS
         Label7 = New Label()
         Text_notes = New TextBox()
         Text_phone = New TextBox()
-        Text_state = New TextBox()
+        Text_company = New TextBox()
         Label4 = New Label()
         Text_adress = New TextBox()
         Label3 = New Label()
@@ -65,7 +65,7 @@ Partial Class SUPPLIERS
         GroupBox1.Controls.Add(GroupBox2)
         GroupBox1.Controls.Add(Text_notes)
         GroupBox1.Controls.Add(Text_phone)
-        GroupBox1.Controls.Add(Text_state)
+        GroupBox1.Controls.Add(Text_company)
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(Text_adress)
         GroupBox1.Controls.Add(Label3)
@@ -198,12 +198,12 @@ Partial Class SUPPLIERS
         Text_phone.Size = New Size(263, 29)
         Text_phone.TabIndex = 9
         ' 
-        ' Text_state
+        ' Text_company
         ' 
-        Text_state.Location = New Point(181, 138)
-        Text_state.Name = "Text_state"
-        Text_state.Size = New Size(263, 29)
-        Text_state.TabIndex = 7
+        Text_company.Location = New Point(181, 138)
+        Text_company.Name = "Text_company"
+        Text_company.Size = New Size(263, 29)
+        Text_company.TabIndex = 7
         ' 
         ' Label4
         ' 
@@ -378,7 +378,7 @@ Partial Class SUPPLIERS
     Friend WithEvents Label6 As Label
     Friend WithEvents Text_phone As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents Text_state As TextBox
+    Friend WithEvents Text_company As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Text_adress As TextBox
     Friend WithEvents Label3 As Label

@@ -1,6 +1,8 @@
 ﻿Public Class SUPPLIERS
 
 
+
+
     Private Sub Butt_Now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         '--------------------clean textbox in groupbox---------------
         For I = 0 To GroupBox1.Controls.Count - 1
@@ -14,7 +16,7 @@
         Btn_back.Enabled = False
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
-        Btn_save.Enabled = False
+        Btn_save.Enabled = True
         Text_debit.Text = "0.000"
         Text_credit.Text = "0.000"
         Text_diff.Text = "0.000"
@@ -49,15 +51,19 @@
             dt.Rows.Add()
             Dim add_ As Integer = dt.Rows.Count - 1
             dt.Rows(add_).Item("IMP_CODE") = Text_code.Text
-            dt.Rows(add_).Item("IMP_NAME ") = Tex_name.Text
-            dt.Rows(add_).Item("IMP_PHONE ") = Text_phone.Text
-            dt.Rows(add_).Item("IMP_ADRESS ") = Text_adress.Text
-            dt.Rows(add_).Item("NOTES ") = Text_notes.Text
-            dt.Rows(add_).Item("STATES ") = Text_state.Text
-            dt.Rows(add_).Item("COMPANY ") = Text_diff.Text
-            dt.Rows(add_).Item("DEBIT ") = Text_debit.Text
-            dt.Rows(add_).Item("CREDIT ") = Text_credit.Text
+            dt.Rows(add_).Item("IMP_NAME") = Tex_name.Text
+            dt.Rows(add_).Item("IMP_PHONE") = Text_phone.Text
+            dt.Rows(add_).Item("IMP_ADRESS") = Text_adress.Text
+            dt.Rows(add_).Item("NOTES") = Text_notes.Text
+            dt.Rows(add_).Item("STATES") = True
+            dt.Rows(add_).Item("COMPANY") = Text_company.Text
+            dt.Rows(add_).Item("DEBIT") = Val(Text_debit.Text)
+            dt.Rows(add_).Item("CREDIT") = Val(Text_credit.Text)
+            Dim sav As New SqlClient.SqlCommandBuilder(da)
+            da.Update(dt)
+            dt.AcceptChanges()
+            MessageBox.Show(" Agregado exitosamente ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Butt_Now_Click(sender, e)
         End If
-
     End Sub
 End Class
