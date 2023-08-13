@@ -46,6 +46,7 @@ Partial Class SUPPLIERS
         Text_code = New TextBox()
         Label1 = New Label()
         GroupBox3 = New GroupBox()
+        Btn_Recherche = New Button()
         Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
@@ -272,16 +273,29 @@ Partial Class SUPPLIERS
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(Btn_Recherche)
         GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
         GroupBox3.Controls.Add(Btn_now)
-        GroupBox3.Location = New Point(156, 332)
+        GroupBox3.Location = New Point(69, 332)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(643, 69)
+        GroupBox3.Size = New Size(748, 69)
         GroupBox3.TabIndex = 1
         GroupBox3.TabStop = False
+        ' 
+        ' Btn_Recherche
+        ' 
+        Btn_Recherche.Image = CType(resources.GetObject("Btn_Recherche.Image"), Image)
+        Btn_Recherche.ImageAlign = ContentAlignment.MiddleRight
+        Btn_Recherche.Location = New Point(618, 18)
+        Btn_Recherche.Name = "Btn_Recherche"
+        Btn_Recherche.Size = New Size(117, 34)
+        Btn_Recherche.TabIndex = 5
+        Btn_Recherche.Text = "Buscar"
+        ToolTip1.SetToolTip(Btn_Recherche, "back")
+        Btn_Recherche.UseVisualStyleBackColor = True
         ' 
         ' Btn_back
         ' 
@@ -397,4 +411,5 @@ Partial Class SUPPLIERS
     Friend WithEvents Btn_now As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Label10 As Label
+    Friend WithEvents Btn_Recherche As Button
 End Class

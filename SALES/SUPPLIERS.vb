@@ -82,7 +82,7 @@
         '----------------------------------------------------------------------------
         'code save------------------------------------------------------------------
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_CODE = '" & Text_code.Text & "' ", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -112,14 +112,14 @@
 
         'code save------------------------------------------------------------------
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_CODE = '" & Text_code.Text & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             'dt.Rows.Add()
             Dim update_ As Integer = BindingContext(dt).Position
-
+            Dim sav As New SqlClient.SqlCommandBuilder(da)
             da.Update(dt)
             dt.AcceptChanges()
             MessageBox.Show(" تم الحذف بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -130,5 +130,23 @@
     Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
         Me.Close()
 
+    End Sub
+
+    Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
+        Try
+            Dim dt As New DataTable
+            Dim rech As Integer = BindingContext(dt).Position
+            Text_code.Text = dt.Rows(rech).Item("IMP_CODE")
+            Tex_name.Text = dt.Rows(rech).Item("IMP_NAME")
+            Text_phone.Text = dt.Rows(rech).Item("IMP_PHONE")
+            Text_adress.Text = dt.Rows(rech).Item("IMP_ADRESS")
+            Text_notes.Text = dt.Rows(rech).Item("NOTES")
+            Text_company.Text = dt.Rows(rech).Item("COMPANY")
+            Text_debit.Text = dt.Rows(rech).Item("DEBIT")
+            Text_credit.Text = dt.Rows(rech).Item("CREDIT")
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
