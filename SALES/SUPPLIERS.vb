@@ -6,7 +6,20 @@
         Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE IMP_CODE = '" & ID_ & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
-            MessageBox.Show("لا توجد بيانات ", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim show_ As Integer = BindingContext(dt).Position
+            Text_code.Text = dt.Rows(show_).Item("IMP_CODE")
+            Tex_name.Text = dt.Rows(show_).Item("IMP_NAME")
+            Text_phone.Text = dt.Rows(show_).Item("IMP_PHONE")
+            Text_adress.Text = dt.Rows(show_).Item("IMP_ADRESS")
+            Text_notes.Text = dt.Rows(show_).Item("NOTES")
+            Text_company.Text = dt.Rows(show_).Item("COMPANY")
+            Text_debit.Text = dt.Rows(show_).Item("DEBIT")
+            Text_credit.Text = dt.Rows(show_).Item("CREDIT")
+            Btn_edit.Enabled = True
+            Btn_delete.Enabled = True
+            Btn_save.Enabled = False
         End If
 
     End Sub
@@ -75,40 +88,85 @@
         End If
     End Sub
 
+    'Private Sub Btn_edit_Click(sender As Object, e As EventArgs) Handles Btn_edit.Click
+    '    If Tex_name.Text = "" Then
+    '        MessageBox.Show("por favor escribe Nombre de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Tex_name.Select()
+
+
+    '    End If
+    '    If Text_phone.Text = "" Then
+    '        MessageBox.Show(" por favor escribe Título de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '        Text_phone.Select()
+    '        Exit Sub
+    '    End If
+    '    '----------------------------------------------------------------------------
+    '    Dim dt As New DataTable
+    '    'dt.Rows.Add()
+
+    '    If dt.Rows.Count = 0 Then
+    '        MessageBox.Show(" غير موجود ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    '    Else
+    '        Dim update_ As Integer = BindingContext(dt).Position
+    '        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE IMP_CODE = '" & Text_code.Text & "'", Sqlcon)
+
+    '        dt.Rows(update_).Item("IMP_CODE") = Text_code.Text
+    '        dt.Rows(update_).Item("IMP_NAME") = Tex_name.Text
+    '        dt.Rows(update_).Item("IMP_PHONE") = Text_phone.Text
+    '        dt.Rows(update_).Item("IMP_ADRESS") = Text_adress.Text
+    '        dt.Rows(update_).Item("NOTES") = Text_notes.Text
+    '        dt.Rows(update_).Item("STATES") = True
+    '        dt.Rows(update_).Item("COMPANY") = Text_company.Text
+    '        dt.Rows(update_).Item("DEBIT") = Val(Text_debit.Text)
+    '        dt.Rows(update_).Item("CREDIT") = Val(Text_credit.Text)
+    '        'Dim sav As New SqlClient.SqlCommandBuilder(da)
+    '        da.Update(dt)
+    '        dt.AcceptChanges()
+    '        MessageBox.Show(" تم تعديل بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '        Butt_Now_Click(sender, e)
+    '    End If
+
+
+    'End Sub
     Private Sub Btn_edit_Click(sender As Object, e As EventArgs) Handles Btn_edit.Click
         If Tex_name.Text = "" Then
-            MessageBox.Show("por favor escribe Nombre de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("يرجى إدخال اسم المورد", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Tex_name.Select()
-            Exit Sub
+            Return
+        End If
 
-        End If
         If Text_phone.Text = "" Then
-            MessageBox.Show(" por favor escribe Título de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("يرجى إدخال رقم هاتف المورد", "خطأ", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Text_phone.Select()
-            Exit Sub
+            Return
         End If
-        '----------------------------------------------------------------------------
-        'code save------------------------------------------------------------------
+
+        ' إنشاء محول بيانات ومجموعة أوامر للعمل مع البيانات
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE IMP_CODE = '" & Text_code.Text & "'", Sqlcon)
+        Dim cmdBuilder As New SqlClient.SqlCommandBuilder(da)
+
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_CODE = '" & Text_code.Text & "' ", Sqlcon)
         da.Fill(dt)
+
         If dt.Rows.Count = 0 Then
-            MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("السجل غير موجود", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
-            'dt.Rows.Add()
-            Dim update_ As Integer = BindingContext(dt).Position
-            dt.Rows(update_).Item("IMP_CODE") = Text_code.Text
-            dt.Rows(update_).Item("IMP_NAME") = Tex_name.Text
-            dt.Rows(update_).Item("IMP_PHONE") = Text_phone.Text
-            dt.Rows(update_).Item("IMP_ADRESS") = Text_adress.Text
-            dt.Rows(update_).Item("NOTES") = Text_notes.Text
-            dt.Rows(update_).Item("STATES") = True
-            dt.Rows(update_).Item("COMPANY") = Text_company.Text
-            dt.Rows(update_).Item("DEBIT") = Val(Text_debit.Text)
-            dt.Rows(update_).Item("CREDIT") = Val(Text_credit.Text)
+            Dim updateRow As DataRow = dt.Rows(0) ' نفترض أنك تقوم بتحديث سجل واحد فقط
+            updateRow("IMP_NAME") = Tex_name.Text
+            updateRow("IMP_PHONE") = Text_phone.Text
+            updateRow("IMP_ADRESS") = Text_adress.Text
+            updateRow("NOTES") = Text_notes.Text
+            updateRow("STATES") = True
+            updateRow("COMPANY") = Text_company.Text
+            updateRow("DEBIT") = Val(Text_debit.Text)
+            updateRow("CREDIT") = Val(Text_credit.Text)
+
             da.Update(dt)
             dt.AcceptChanges()
-            MessageBox.Show(" تم تعديل بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            MessageBox.Show("تم التحديث بنجاح", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' اتصل بدالة أخرى أو قم بإجراءات إضافية بعد التحديث
             Butt_Now_Click(sender, e)
         End If
     End Sub
