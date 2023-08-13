@@ -1,7 +1,15 @@
 ﻿Public Class SUPPLIERS
 
 
+    Sub show_detait(ID_)
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE IMP_CODE = '" & ID_ & "'", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show("لا توجد بيانات ", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
 
+    End Sub
 
     Private Sub Butt_Now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         '--------------------clean textbox in groupbox---------------
@@ -133,20 +141,23 @@
     End Sub
 
     Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
-        Try
-            Dim dt As New DataTable
-            Dim rech As Integer = BindingContext(dt).Position
-            Text_code.Text = dt.Rows(rech).Item("IMP_CODE")
-            Tex_name.Text = dt.Rows(rech).Item("IMP_NAME")
-            Text_phone.Text = dt.Rows(rech).Item("IMP_PHONE")
-            Text_adress.Text = dt.Rows(rech).Item("IMP_ADRESS")
-            Text_notes.Text = dt.Rows(rech).Item("NOTES")
-            Text_company.Text = dt.Rows(rech).Item("COMPANY")
-            Text_debit.Text = dt.Rows(rech).Item("DEBIT")
-            Text_credit.Text = dt.Rows(rech).Item("CREDIT")
+        Search_sup.ShowDialog()
 
-        Catch ex As Exception
 
-        End Try
+        'Try
+        '    Dim dt As New DataTable
+        '    Dim rech As Integer = BindingContext(dt).Position
+        '    Text_code.Text = dt.Rows(rech).Item("IMP_CODE")
+        '    Tex_name.Text = dt.Rows(rech).Item("IMP_NAME")
+        '    Text_phone.Text = dt.Rows(rech).Item("IMP_PHONE")
+        '    Text_adress.Text = dt.Rows(rech).Item("IMP_ADRESS")
+        '    Text_notes.Text = dt.Rows(rech).Item("NOTES")
+        '    Text_company.Text = dt.Rows(rech).Item("COMPANY")
+        '    Text_debit.Text = dt.Rows(rech).Item("DEBIT")
+        '    Text_credit.Text = dt.Rows(rech).Item("CREDIT")
+
+        'Catch ex As Exception
+
+        'End Try
     End Sub
 End Class

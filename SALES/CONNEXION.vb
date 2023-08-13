@@ -27,5 +27,13 @@ Module CONNEXION
         End If
 
     End Function
-
+    '------------ تعبئة  datagridview--------------
+    Public Sub DGV_FILL(DGV As DataGridView, SQL As String)
+        DGV.DataSource = ""
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter(SQL, Sqlcon)
+        da.Fill(dt)
+        DGV.AutoGenerateColumns = False  ' تحدد له لي غيطلع فيه
+        DGV.DataSource = dt.DefaultView ' ميمكنش تعدل عليه
+    End Sub
 End Module
