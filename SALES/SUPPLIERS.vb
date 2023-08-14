@@ -194,7 +194,9 @@
     End Sub
 
     Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
-        Me.Close()
+
+        Me.Hide()
+
 
     End Sub
 
