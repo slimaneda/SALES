@@ -117,7 +117,7 @@ Partial Class Customers
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label8.Location = New Point(295, 41)
+        Label8.Location = New Point(309, 46)
         Label8.Name = "Label8"
         Label8.Size = New Size(59, 21)
         Label8.TabIndex = 15
@@ -153,7 +153,7 @@ Partial Class Customers
         ' 
         ' Text_company
         ' 
-        Text_company.Location = New Point(127, 90)
+        Text_company.Location = New Point(103, 93)
         Text_company.Name = "Text_company"
         Text_company.Size = New Size(220, 29)
         Text_company.TabIndex = 7
@@ -196,7 +196,7 @@ Partial Class Customers
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(295, 42)
+        Label2.Location = New Point(302, 47)
         Label2.Name = "Label2"
         Label2.Size = New Size(161, 21)
         Label2.TabIndex = 2
@@ -204,7 +204,7 @@ Partial Class Customers
         ' 
         ' Text_code
         ' 
-        Text_code.Location = New Point(127, 44)
+        Text_code.Location = New Point(137, 39)
         Text_code.Name = "Text_code"
         Text_code.Size = New Size(88, 29)
         Text_code.TabIndex = 1

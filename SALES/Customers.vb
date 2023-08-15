@@ -1,4 +1,30 @@
 ﻿Public Class Customers
+
+    Sub show_detait(ID)
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM CUSTOMERS WHERE CUS_CODE = '" & ID & "'", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim show_ As Integer = BindingContext(dt).Position
+            Text_code.Text = dt.Rows(show_).Item("CUS_CODE")
+            Tex_name.Text = dt.Rows(show_).Item("CUS_NAME")
+            Text_phone.Text = dt.Rows(show_).Item("CUS_PHONE")
+            Text_adress.Text = dt.Rows(show_).Item("CUS_ADRESS")
+            Text_notes.Text = dt.Rows(show_).Item("NOTES")
+            Text_company.Text = dt.Rows(show_).Item("COMPANY")
+            Text_debit.Text = dt.Rows(show_).Item("DEBIT")
+            Text_credit.Text = dt.Rows(show_).Item("CREDIT")
+            Btn_edit.Enabled = True
+            Btn_delete.Enabled = True
+            Btn_save.Enabled = False
+        End If
+
+    End Sub
+
+
+
     Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
 
         Me.Hide()
@@ -116,6 +142,7 @@
     End Sub
 
     Private Sub Btn_delete_Click(sender As Object, e As EventArgs) Handles Btn_delete.Click
+
         If MessageBox.Show(" هل ترغب في الحذف", " رسالة تنبه", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then Exit Sub
 
 
@@ -126,13 +153,22 @@
         If dt.Rows.Count = 0 Then
             MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            'dt.Rows.Add()
-            Dim update_ As Integer = BindingContext(dt).Position
+
+            Dim DELET_ As DataRow = dt.Rows(0)
+            DELET_.Delete()
             Dim sav As New SqlClient.SqlCommandBuilder(da)
             da.Update(dt)
             dt.AcceptChanges()
             MessageBox.Show(" تم الحذف بنجاع ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
             Btn_now_Click(sender, e)
+
         End If
     End Sub
+
+    Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
+        Searche_cus.ShowDialog()
+    End Sub
+
+
 End Class

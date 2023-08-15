@@ -87,9 +87,9 @@ Partial Class Search_sup
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(RadioButton2)
         GroupBox1.Controls.Add(RadioButton1)
+        GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(DataGridView1)
         GroupBox1.Location = New Point(-1, 1)
         GroupBox1.Margin = New Padding(4)
@@ -111,11 +111,11 @@ Partial Class Search_sup
         ' RadioButton2
         ' 
         RadioButton2.AutoSize = True
-        RadioButton2.Location = New Point(142, 48)
+        RadioButton2.Location = New Point(117, 52)
         RadioButton2.Margin = New Padding(4)
         RadioButton2.Name = "RadioButton2"
         RadioButton2.Size = New Size(79, 25)
-        RadioButton2.TabIndex = 2
+        RadioButton2.TabIndex = 6
         RadioButton2.Text = "Adress "
         RadioButton2.UseVisualStyleBackColor = True
         ' 
@@ -123,11 +123,11 @@ Partial Class Search_sup
         ' 
         RadioButton1.AutoSize = True
         RadioButton1.Checked = True
-        RadioButton1.Location = New Point(60, 48)
+        RadioButton1.Location = New Point(35, 52)
         RadioButton1.Margin = New Padding(4)
         RadioButton1.Name = "RadioButton1"
         RadioButton1.Size = New Size(74, 25)
-        RadioButton1.TabIndex = 1
+        RadioButton1.TabIndex = 5
         RadioButton1.TabStop = True
         RadioButton1.Text = "Name "
         RadioButton1.UseVisualStyleBackColor = True
@@ -155,11 +155,11 @@ Partial Class Search_sup
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
 End Class
