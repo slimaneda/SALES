@@ -52,9 +52,11 @@ Partial Class Customers
         Btn_save = New Button()
         Btn_now = New Button()
         GroupBox3 = New GroupBox()
+        ErrorProvider1 = New ErrorProvider(components)
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox3.SuspendLayout()
+        CType(ErrorProvider1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Label6
@@ -343,6 +345,10 @@ Partial Class Customers
         GroupBox3.TabIndex = 7
         GroupBox3.TabStop = False
         ' 
+        ' ErrorProvider1
+        ' 
+        ErrorProvider1.ContainerControl = Me
+        ' 
         ' Customers
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
@@ -362,6 +368,7 @@ Partial Class Customers
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         GroupBox3.ResumeLayout(False)
+        CType(ErrorProvider1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -393,4 +400,5 @@ Partial Class Customers
     Friend WithEvents Btn_save As Button
     Friend WithEvents Btn_now As Button
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

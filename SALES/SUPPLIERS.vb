@@ -184,7 +184,8 @@
             MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             'dt.Rows.Add()
-            Dim update_ As Integer = BindingContext(dt).Position
+            Dim DELET_ As DataRow = dt.Rows(0)
+            DELET_("STATES") = False
             Dim sav As New SqlClient.SqlCommandBuilder(da)
             da.Update(dt)
             dt.AcceptChanges()
