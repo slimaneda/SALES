@@ -24,6 +24,7 @@ Partial Class Main_Page
     Private Sub InitializeComponent()
         Button1 = New Button()
         Button2 = New Button()
+        Button3 = New Button()
         SuspendLayout()
         ' 
         ' Button1
@@ -44,11 +45,21 @@ Partial Class Main_Page
         Button2.Text = "Page Customers"
         Button2.UseVisualStyleBackColor = True
         ' 
+        ' Button3
+        ' 
+        Button3.Location = New Point(12, 106)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(156, 31)
+        Button3.TabIndex = 2
+        Button3.Text = "Page items"
+        Button3.UseVisualStyleBackColor = True
+        ' 
         ' Main_Page
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(664, 227)
+        Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
@@ -64,4 +75,5 @@ Partial Class Main_Page
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
