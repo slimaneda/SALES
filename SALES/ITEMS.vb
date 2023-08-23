@@ -12,33 +12,6 @@
 
     End Sub
 
-
-
-
-
-
-
-    'Sub show_detait(ID)
-    '    Dim dt As New DataTable
-    '    Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE WHERE UNITE_CODE = '" & Text_code.Text & "'", Sqlcon)
-    '    da.Fill(dt)
-    '    If dt.Rows.Count = 0 Then
-    '        MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    Else
-    '        Dim show_ As Integer = BindingContext(dt).Position
-    '        Text_code.Text = dt.Rows(show_).Item("UNITE_CODE")
-    '        Text_name.Text = dt.Rows(show_).Item("UNITE_NAME")
-
-    '        Btn_edit.Enabled = True
-    '        Btn_delete.Enabled = True
-    '        Btn_save.Enabled = False
-    '    End If
-
-    'End Sub
-
-
-
-
     Private Sub Btn_now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         For i = 0 To GroupBox1.Controls.Count - 1
             If TypeOf GroupBox1.Controls(i) Is TextBox Then GroupBox1.Controls(i).Text = ""
@@ -200,5 +173,7 @@
         FILL_UNITE("SELECT * FROM UNITE")
     End Sub
 
+    Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
 
+    End Sub
 End Class

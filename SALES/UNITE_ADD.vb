@@ -38,7 +38,7 @@ Public Class UNITE_ADD
         Btn_edit.Enabled = False
         Btn_now.Enabled = False
         Text_name.Select()
-
+        DGV_FILL(DataGridView1, "SELECT * FROM UNITE")
     End Sub
 
     Private Sub Btn_save_Click(sender As Object, e As EventArgs) Handles Btn_save.Click
@@ -55,7 +55,7 @@ Public Class UNITE_ADD
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
 
-            If dt.Rows.Count > 0 Then
+            If dt.Rows.Count = 0 Then
                 MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 dt.Rows.Add()
@@ -75,7 +75,7 @@ Public Class UNITE_ADD
 
     Private Sub UNITE_ADD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Btn_now_Click(sender, e)
-        DGV_FILL(DataGridView1, "SELECT * FROM UNITE")
+        'DGV_FILL(DataGridView1, "SELECT * FROM UNITE")
 
 
     End Sub
@@ -90,19 +90,15 @@ Public Class UNITE_ADD
 
             '--------------
             Dim dt As New DataTable
-            Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE where UNITE_NAME = '" & Text_name.Text & "' ", Sqlcon)
+            Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE where UNITE_CODE = '" & Text_code.Text & "' ", Sqlcon)
             da.Fill(dt)
 
             Dim cmdBuilder As New SqlClient.SqlCommandBuilder(da)
-
-
-
-
             If dt.Rows.Count = 0 Then
                 MessageBox.Show("السجل غير موجود", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
                 Dim updateRow As DataRow = dt.Rows(0) ' نفترض أنك تقوم بتحديث سجل واحد فقط
-
+                updateRow("UNITE_CODE") = Text_code.Text
                 updateRow("UNITE_NAME") = Text_name.Text
 
                 da.Update(dt)
@@ -117,13 +113,13 @@ Public Class UNITE_ADD
 
     Private Sub Btn_delete_Click(sender As Object, e As EventArgs) Handles Btn_delete.Click
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE WHERE UNITE_NAME = '" & Text_name.Text & "' ", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
-            MessageBox.Show(" المورد غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(" الصنف غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
 
-            Dim DELET_ = dt.Rows(0)
+            Dim DELET_ As DataRow = dt.Rows(0)
             DELET_.Delete()
             Dim sav As New SqlClient.SqlCommandBuilder(da)
             da.Update(dt)

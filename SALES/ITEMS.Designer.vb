@@ -59,6 +59,7 @@ Partial Class ITEMS
         ' GroupBox1
         ' 
         GroupBox1.BackColor = SystemColors.ButtonFace
+        GroupBox1.Controls.Add(CheckBox2)
         GroupBox1.Controls.Add(Text_unite)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(Text_qty)
@@ -80,6 +81,7 @@ Partial Class ITEMS
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Text_code)
         GroupBox1.Controls.Add(Label1)
+        GroupBox1.Enabled = False
         GroupBox1.Location = New Point(4, 12)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(869, 330)
@@ -89,6 +91,9 @@ Partial Class ITEMS
         ' 
         ' Text_unite
         ' 
+        Text_unite.BackColor = SystemColors.InactiveBorder
+        Text_unite.Enabled = False
+        Text_unite.FlatStyle = FlatStyle.Popup
         Text_unite.FormattingEnabled = True
         Text_unite.Location = New Point(475, 90)
         Text_unite.Name = "Text_unite"
@@ -127,7 +132,6 @@ Partial Class ITEMS
         ' 
         ' GroupBox3
         ' 
-        GroupBox3.Controls.Add(CheckBox2)
         GroupBox3.Controls.Add(Btn_Recherche)
         GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
@@ -144,7 +148,7 @@ Partial Class ITEMS
         ' 
         CheckBox2.AutoSize = True
         CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point)
-        CheckBox2.Location = New Point(485, -2)
+        CheckBox2.Location = New Point(545, 259)
         CheckBox2.Name = "CheckBox2"
         CheckBox2.Size = New Size(15, 14)
         CheckBox2.TabIndex = 21
@@ -376,7 +380,6 @@ Partial Class ITEMS
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         GroupBox3.ResumeLayout(False)
-        GroupBox3.PerformLayout()
         ResumeLayout(False)
     End Sub
 

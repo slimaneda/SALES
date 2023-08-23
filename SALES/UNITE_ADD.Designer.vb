@@ -163,6 +163,7 @@ Partial Class UNITE_ADD
         Column4.HeaderText = "Code Unite"
         Column4.Name = "Column4"
         Column4.ReadOnly = True
+        Column4.Visible = False
         ' 
         ' UNITE_ADD
         ' 
