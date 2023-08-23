@@ -1,5 +1,32 @@
 ﻿Public Class ITEMS
 
+
+    Sub show_detait(ID)
+        Dim dt As New DataTable
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_CODE = '" & ID & "'", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            Dim show_ As Integer = BindingContext(dt).Position
+
+            Text_name.Text = dt.Rows(show_).Item("ITEM_NAME")
+            Text_barcode.Text = dt.Rows(show_).Item("ITEM_CODE")
+            Text_unite.Text = dt.Rows(show_).Item("ITEM_UNIT")
+            Text_costprice.Text = dt.Rows(show_).Item("ITEM_TKLFA")
+            Text_costprice.Text = dt.Rows(show_).Item("ITEM_PRICE")
+            Text_qty.Text = dt.Rows(show_).Item("ITEM_Qntity")
+            DTP.Value = dt.Rows(show_).Item("ITEM_EXPIRE")
+            Text_notes.Text = dt.Rows(show_).Item("NOTES")
+            CheckBox1.Checked = dt.Rows(show_).Item("ITEM_CHEACK")
+
+            Btn_edit.Enabled = True
+            Btn_delete.Enabled = True
+            Btn_save.Enabled = False
+        End If
+
+    End Sub
+
     '------------------- اظهار على كومبوبوكس
     Sub FILL_UNITE(STR As String)
         Text_unite.Items.Clear()
@@ -28,7 +55,6 @@
     End Sub
 
     Private Sub ITEMS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         Btn_now_Click(sender, e)
     End Sub
 

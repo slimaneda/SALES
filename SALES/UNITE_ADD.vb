@@ -1,6 +1,4 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.Button
-
-Public Class UNITE_ADD
+﻿Public Class UNITE_ADD
 
 
     Sub show_detait(ID)

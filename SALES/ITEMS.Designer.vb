@@ -24,12 +24,12 @@ Partial Class ITEMS
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(ITEMS))
         GroupBox1 = New GroupBox()
+        CheckBox2 = New CheckBox()
         Text_unite = New ComboBox()
         Button1 = New Button()
         Text_qty = New TextBox()
         Label7 = New Label()
         GroupBox3 = New GroupBox()
-        CheckBox2 = New CheckBox()
         Btn_Recherche = New Button()
         Btn_back = New Button()
         Btn_delete = New Button()
@@ -89,6 +89,16 @@ Partial Class ITEMS
         GroupBox1.TabStop = False
         GroupBox1.Text = "Basic Information:"
         ' 
+        ' CheckBox2
+        ' 
+        CheckBox2.AutoSize = True
+        CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point)
+        CheckBox2.Location = New Point(545, 259)
+        CheckBox2.Name = "CheckBox2"
+        CheckBox2.Size = New Size(15, 14)
+        CheckBox2.TabIndex = 21
+        CheckBox2.UseVisualStyleBackColor = True
+        ' 
         ' Text_unite
         ' 
         Text_unite.BackColor = SystemColors.InactiveBorder
@@ -132,27 +142,17 @@ Partial Class ITEMS
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(Btn_now)
         GroupBox3.Controls.Add(Btn_Recherche)
         GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
-        GroupBox3.Controls.Add(Btn_now)
         GroupBox3.Location = New Point(60, 274)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(748, 69)
         GroupBox3.TabIndex = 10
         GroupBox3.TabStop = False
-        ' 
-        ' CheckBox2
-        ' 
-        CheckBox2.AutoSize = True
-        CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point)
-        CheckBox2.Location = New Point(545, 259)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(15, 14)
-        CheckBox2.TabIndex = 21
-        CheckBox2.UseVisualStyleBackColor = True
         ' 
         ' Btn_Recherche
         ' 
