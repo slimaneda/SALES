@@ -30,12 +30,12 @@ Partial Class ITEMS
         Text_qty = New TextBox()
         Label7 = New Label()
         GroupBox3 = New GroupBox()
+        Btn_now = New Button()
         Btn_Recherche = New Button()
         Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
         Btn_save = New Button()
-        Btn_now = New Button()
         DTP = New DateTimePicker()
         Label10 = New Label()
         CheckBox1 = New CheckBox()
@@ -81,7 +81,6 @@ Partial Class ITEMS
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Text_code)
         GroupBox1.Controls.Add(Label1)
-        GroupBox1.Enabled = False
         GroupBox1.Location = New Point(4, 12)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(869, 330)
@@ -101,8 +100,7 @@ Partial Class ITEMS
         ' 
         ' Text_unite
         ' 
-        Text_unite.BackColor = SystemColors.InactiveBorder
-        Text_unite.Enabled = False
+        Text_unite.BackColor = SystemColors.ControlLightLight
         Text_unite.FlatStyle = FlatStyle.Popup
         Text_unite.FormattingEnabled = True
         Text_unite.Location = New Point(475, 90)
@@ -153,6 +151,17 @@ Partial Class ITEMS
         GroupBox3.Size = New Size(748, 69)
         GroupBox3.TabIndex = 10
         GroupBox3.TabStop = False
+        ' 
+        ' Btn_now
+        ' 
+        Btn_now.Image = CType(resources.GetObject("Btn_now.Image"), Image)
+        Btn_now.ImageAlign = ContentAlignment.MiddleRight
+        Btn_now.Location = New Point(6, 18)
+        Btn_now.Name = "Btn_now"
+        Btn_now.Size = New Size(117, 34)
+        Btn_now.TabIndex = 11
+        Btn_now.Text = "Nuevo"
+        Btn_now.UseVisualStyleBackColor = True
         ' 
         ' Btn_Recherche
         ' 
@@ -209,17 +218,6 @@ Partial Class ITEMS
         Btn_save.TabIndex = 12
         Btn_save.Text = "Memoriza   "
         Btn_save.UseVisualStyleBackColor = True
-        ' 
-        ' Btn_now
-        ' 
-        Btn_now.Image = CType(resources.GetObject("Btn_now.Image"), Image)
-        Btn_now.ImageAlign = ContentAlignment.MiddleRight
-        Btn_now.Location = New Point(6, 18)
-        Btn_now.Name = "Btn_now"
-        Btn_now.Size = New Size(117, 34)
-        Btn_now.TabIndex = 11
-        Btn_now.Text = "Nuevo"
-        Btn_now.UseVisualStyleBackColor = True
         ' 
         ' DTP
         ' 

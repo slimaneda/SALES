@@ -37,7 +37,7 @@
         End If
     End Sub
     Private Sub Searche_items_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DGV_FILL(DataGridView1, "SELECT * FROM ITEMS ORDER BY ITEM_CODE")
+        DGV_FILL(DataGridView1, "SELECT * FROM ITEMS ORDER BY ID")
         ComboBox1.SelectedIndex = 0
         ComboBox1.Select()
 

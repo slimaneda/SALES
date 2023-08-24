@@ -47,7 +47,7 @@ Partial Class Main_Page
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(12, 106)
+        Button3.Location = New Point(174, 32)
         Button3.Name = "Button3"
         Button3.Size = New Size(156, 31)
         Button3.TabIndex = 2
@@ -58,7 +58,7 @@ Partial Class Main_Page
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(664, 227)
+        ClientSize = New Size(664, 136)
         Controls.Add(Button3)
         Controls.Add(Button2)
         Controls.Add(Button1)

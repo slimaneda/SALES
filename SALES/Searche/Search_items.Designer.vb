@@ -23,13 +23,13 @@ Partial Class Search_items
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         DataGridView1 = New DataGridView()
+        GroupBox1 = New GroupBox()
+        ComboBox1 = New ComboBox()
+        TextBox1 = New TextBox()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
         Column4 = New DataGridViewTextBoxColumn()
-        GroupBox1 = New GroupBox()
-        ComboBox1 = New ComboBox()
-        TextBox1 = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -48,33 +48,6 @@ Partial Class Search_items
         DataGridView1.ReadOnly = True
         DataGridView1.Size = New Size(757, 200)
         DataGridView1.TabIndex = 0
-        ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "info"
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        ' 
-        ' Column2
-        ' 
-        Column2.DataPropertyName = "ID"
-        Column2.HeaderText = "Code"
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        ' 
-        ' Column3
-        ' 
-        Column3.DataPropertyName = "ITEM_NAME"
-        Column3.HeaderText = "Name"
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        ' 
-        ' Column4
-        ' 
-        Column4.DataPropertyName = "CUS_PHONE"
-        Column4.HeaderText = "Barkoude"
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
         ' 
         ' GroupBox1
         ' 
@@ -109,6 +82,33 @@ Partial Class Search_items
         TextBox1.Size = New Size(489, 29)
         TextBox1.TabIndex = 3
         ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "info"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.DataPropertyName = "ID"
+        Column2.HeaderText = "Code"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.DataPropertyName = "ITEM_NAME"
+        Column3.HeaderText = "Name"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.DataPropertyName = "ITEM_CODE"
+        Column4.HeaderText = "Barkoude"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
         ' Search_items
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
@@ -126,11 +126,11 @@ Partial Class Search_items
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents TextBox1 As TextBox
 End Class
