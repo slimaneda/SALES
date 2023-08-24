@@ -6,7 +6,7 @@
         Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ID = '" & ID & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
-            MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("ل توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim show_ As Integer = BindingContext(dt).Position
 
@@ -88,32 +88,32 @@
         Dim dt As New DataTable
 
 
-                Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ITEM_NAME = '" & Text_name.Text & "'  or ITEM_CODE = '" & Text_barcode.Text & "' ", Sqlcon)
-                da.Fill(dt)
-                If dt.Rows.Count > 0 Then
-                    MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Else
-                    dt.Rows.Add()
-                    Dim add_ As Integer = dt.Rows.Count - 1
-                    dt.Rows(add_).Item("ITEM_NAME") = Text_name.Text
-                    dt.Rows(add_).Item("ITEM_CODE") = Text_barcode.Text
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ITEM_NAME = '" & Text_name.Text & "'  or ITEM_CODE = '" & Text_barcode.Text & "' ", Sqlcon)
+        da.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            dt.Rows.Add()
+            Dim add_ As Integer = dt.Rows.Count - 1
+            dt.Rows(add_).Item("ITEM_NAME") = Text_name.Text
+            dt.Rows(add_).Item("ITEM_CODE") = Text_barcode.Text
             dt.Rows(add_).Item("ITEM_UNIT") = Text_unite.Text
             dt.Rows(add_).Item("ITEM_TKLFA") = Val(Text_costprice.Text)
-                    dt.Rows(add_).Item("ITEM_PRICE") = Val(Text_sellingprice.Text)
-                    dt.Rows(add_).Item("ITEM_Qntity") = Val(Text_qty.Text)
-                    dt.Rows(add_).Item("ITEM_EXPIRE") = DTP.Value
-                    dt.Rows(add_).Item("NOTES") = Text_notes.Text
+            dt.Rows(add_).Item("ITEM_PRICE") = Val(Text_sellingprice.Text)
+            dt.Rows(add_).Item("ITEM_Qntity") = Val(Text_qty.Text)
+            dt.Rows(add_).Item("ITEM_EXPIRE") = DTP.Value
+            dt.Rows(add_).Item("NOTES") = Text_notes.Text
             dt.Rows(add_).Item("ITEM_CHEACK") = CheckBox1.Checked
 
 
 
             Dim sav As New SqlClient.SqlCommandBuilder(da)
-                    da.Update(dt)
-                    dt.AcceptChanges()
-                    MessageBox.Show(" تم الحفظ بنجاح ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Btn_now_Click(sender, e)
-                End If
-          
+            da.Update(dt)
+            dt.AcceptChanges()
+            MessageBox.Show(" تم الحفظ بنجاح ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Btn_now_Click(sender, e)
+        End If
+
 
     End Sub
 
@@ -139,35 +139,35 @@
         '----------------------------------------------------------------------------
         ' إنشاء محول بيانات ومجموعة أوامر للعمل مع البيانات
         Dim dt As New DataTable
-                Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ID = '" & Text_code.Text & "'", Sqlcon)
-                da.Fill(dt)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ID = '" & Text_code.Text & "'", Sqlcon)
+        da.Fill(dt)
 
-                Dim cmdBuilder As New SqlClient.SqlCommandBuilder(da)
+        Dim cmdBuilder As New SqlClient.SqlCommandBuilder(da)
 
-                If dt.Rows.Count = 0 Then
-                    MessageBox.Show("السجل غير موجود", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    Dim updateRow As DataRow = dt.Rows(0) ' نفترض أنك تقوم بتحديث سجل واحد فقط
-                updateRow("ID") = Text_code.Text
-                updateRow("ITEM_NAME") = Text_name.Text
-                updateRow("ITEM_CODE") = Text_barcode.Text
-                updateRow("ITEM_UNIT") = Text_unite.Text
-                updateRow("ITEM_TKLFA") = Val(Text_costprice.Text)
-                    updateRow("ITEM_PRICE") = Val(Text_sellingprice.Text)
-                    updateRow("ITEM_Qntity") = Val(Text_qty.Text)
-                    updateRow("ITEM_EXPIRE") = DTP.Value
-                    updateRow("NOTES") = Text_notes.Text
-                    updateRow("ITEM_CHEACK") = CheckBox1.Checked
-                    updateRow("ITEM_Qntity") = Text_qty.Text
+        If dt.Rows.Count = 0 Then
+            MessageBox.Show("السجل غير موجود", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            Dim updateRow As DataRow = dt.Rows(0) ' نفترض أنك تقوم بتحديث سجل واحد فقط
+            updateRow("ID") = Text_code.Text
+            updateRow("ITEM_NAME") = Text_name.Text
+            updateRow("ITEM_CODE") = Text_barcode.Text
+            updateRow("ITEM_UNIT") = Text_unite.Text
+            updateRow("ITEM_TKLFA") = Val(Text_costprice.Text)
+            updateRow("ITEM_PRICE") = Val(Text_sellingprice.Text)
+            updateRow("ITEM_Qntity") = Val(Text_qty.Text)
+            updateRow("ITEM_EXPIRE") = DTP.Value
+            updateRow("NOTES") = Text_notes.Text
+            updateRow("ITEM_CHEACK") = CheckBox1.Checked
+            updateRow("ITEM_Qntity") = Text_qty.Text
 
 
-                    da.Update(dt)
-                    dt.AcceptChanges()
+            da.Update(dt)
+            dt.AcceptChanges()
 
-                    MessageBox.Show("تم التحديث بنجاح", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    ' اتصل بدالة أخرى أو قم بإجراءات إضافية بعد التحديث
-                    Btn_now_Click(sender, e)
-                End If
+            MessageBox.Show("تم التحديث بنجاح", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            ' اتصل بدالة أخرى أو قم بإجراءات إضافية بعد التحديث
+            Btn_now_Click(sender, e)
+        End If
 
     End Sub
 
