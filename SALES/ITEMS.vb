@@ -1,18 +1,18 @@
 ﻿Public Class ITEMS
 
 
-    Sub show_detait(ID)
+    Sub show_detait(ID_)
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ID = '" & ID & "'", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ID = '" & ID_ & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show("ل توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             Dim show_ As Integer = BindingContext(dt).Position
 
-            Text_code.Text = dt.Rows(show_).Item("ID")
+            Text_code.Text = dt.Rows(show_).Item("ITEM_CODE")
             Text_name.Text = dt.Rows(show_).Item("ITEM_NAME")
-            Text_barcode.Text = dt.Rows(show_).Item("ITEM_CODE")
+            Text_barcode.Text = dt.Rows(show_).Item("ITEM_BAR")
             'Text_unite.Text = dt.Rows(show_).Item("ITEM_UNIT")
             Text_costprice.Text = dt.Rows(show_).Item("ITEM_TKLFA")
             Text_sellingprice.Text = dt.Rows(show_).Item("ITEM_PRICE")
@@ -95,8 +95,9 @@
         Else
             dt.Rows.Add()
             Dim add_ As Integer = dt.Rows.Count - 1
+            dt.Rows(add_).Item("ITEM_CODE") = Text_code.Text
             dt.Rows(add_).Item("ITEM_NAME") = Text_name.Text
-            dt.Rows(add_).Item("ITEM_CODE") = Text_barcode.Text
+            dt.Rows(add_).Item("ITEM_BAR") = Text_barcode.Text
             dt.Rows(add_).Item("ITEM_UNIT") = Text_unite.Text
             dt.Rows(add_).Item("ITEM_TKLFA") = Val(Text_costprice.Text)
             dt.Rows(add_).Item("ITEM_PRICE") = Val(Text_sellingprice.Text)
@@ -148,9 +149,9 @@
             MessageBox.Show("السجل غير موجود", "رسالة تأكيد", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Else
             Dim updateRow As DataRow = dt.Rows(0) ' نفترض أنك تقوم بتحديث سجل واحد فقط
-            updateRow("ID") = Text_code.Text
+            updateRow("ITEM_CODE") = Text_code.Text
             updateRow("ITEM_NAME") = Text_name.Text
-            updateRow("ITEM_CODE") = Text_barcode.Text
+            updateRow("ITEM_BAR") = Text_barcode.Text
             updateRow("ITEM_UNIT") = Text_unite.Text
             updateRow("ITEM_TKLFA") = Val(Text_costprice.Text)
             updateRow("ITEM_PRICE") = Val(Text_sellingprice.Text)
@@ -204,5 +205,10 @@
 
     Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
         Search_items.ShowDialog()
+    End Sub
+
+    Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
+        Main_Page.ShowDialog()
+
     End Sub
 End Class

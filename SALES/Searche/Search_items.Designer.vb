@@ -90,7 +90,7 @@ Partial Class Search_items
         ' 
         ' Column2
         ' 
-        Column2.DataPropertyName = "ID"
+        Column2.DataPropertyName = "ITEM_CODE"
         Column2.HeaderText = "Code"
         Column2.Name = "Column2"
         Column2.ReadOnly = True
@@ -104,8 +104,8 @@ Partial Class Search_items
         ' 
         ' Column4
         ' 
-        Column4.DataPropertyName = "ITEM_CODE"
-        Column4.HeaderText = "Barkoude"
+        Column4.DataPropertyName = "ITEM_BAR"
+        Column4.HeaderText = "Barcode"
         Column4.Name = "Column4"
         Column4.ReadOnly = True
         ' 

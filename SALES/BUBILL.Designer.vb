@@ -24,21 +24,24 @@ Partial Class BUBILL
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(BUBILL))
         GroupBox1 = New GroupBox()
-        TextBox3 = New TextBox()
+        RadioButton1 = New RadioButton()
+        Text_type = New ComboBox()
+        Label6 = New Label()
+        Text_notes = New TextBox()
         Label4 = New Label()
-        TextBox2 = New TextBox()
+        Text_employee = New TextBox()
         Label3 = New Label()
-        Text_unite = New ComboBox()
+        Text_importname = New ComboBox()
         Label11 = New Label()
-        TextBox1 = New TextBox()
         Label2 = New Label()
         Text_code = New TextBox()
         Label1 = New Label()
         DTP = New DateTimePicker()
         Label10 = New Label()
         GroupBox2 = New GroupBox()
+        Label5 = New Label()
         Btn_now = New Button()
-        TextBox4 = New TextBox()
+        Text_barcode = New TextBox()
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
@@ -48,30 +51,39 @@ Partial Class BUBILL
         Column6 = New DataGridViewTextBoxColumn()
         Column7 = New DataGridViewTextBoxColumn()
         GroupBox3 = New GroupBox()
-        Button1 = New Button()
-        Btn_Recherche = New Button()
+        Btn_new = New Button()
+        Btn_search = New Button()
         Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
         Btn_save = New Button()
-        Label5 = New Label()
-        Label6 = New Label()
+        GroupBox4 = New GroupBox()
+        Label12 = New Label()
+        Text_TOTALARABIC = New TextBox()
+        Text_discount = New TextBox()
+        Label9 = New Label()
+        Text_totalqty = New TextBox()
+        Label7 = New Label()
+        Text_total = New TextBox()
+        Label8 = New Label()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox3.SuspendLayout()
+        GroupBox4.SuspendLayout()
         SuspendLayout()
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(RadioButton1)
+        GroupBox1.Controls.Add(Text_type)
         GroupBox1.Controls.Add(Label6)
-        GroupBox1.Controls.Add(TextBox3)
+        GroupBox1.Controls.Add(Text_notes)
         GroupBox1.Controls.Add(Label4)
-        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(Text_employee)
         GroupBox1.Controls.Add(Label3)
-        GroupBox1.Controls.Add(Text_unite)
+        GroupBox1.Controls.Add(Text_importname)
         GroupBox1.Controls.Add(Label11)
-        GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Text_code)
         GroupBox1.Controls.Add(Label1)
@@ -81,18 +93,48 @@ Partial Class BUBILL
         GroupBox1.Margin = New Padding(4)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(4)
-        GroupBox1.Size = New Size(813, 172)
+        GroupBox1.Size = New Size(802, 172)
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         GroupBox1.Text = "Info personelle"
         ' 
-        ' TextBox3
+        ' RadioButton1
         ' 
-        TextBox3.Location = New Point(97, 116)
-        TextBox3.Multiline = True
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(703, 48)
-        TextBox3.TabIndex = 6
+        RadioButton1.AutoSize = True
+        RadioButton1.Location = New Point(468, 91)
+        RadioButton1.Name = "RadioButton1"
+        RadioButton1.Size = New Size(36, 25)
+        RadioButton1.TabIndex = 33
+        RadioButton1.TabStop = True
+        RadioButton1.Text = "v"
+        RadioButton1.UseVisualStyleBackColor = True
+        ' 
+        ' Text_type
+        ' 
+        Text_type.FormattingEnabled = True
+        Text_type.Items.AddRange(New Object() {"Espèce ", "اجل"})
+        Text_type.Location = New Point(257, 46)
+        Text_type.Name = "Text_type"
+        Text_type.Size = New Size(140, 29)
+        Text_type.TabIndex = 2
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label6.Location = New Point(429, 28)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(75, 21)
+        Label6.TabIndex = 32
+        Label6.Text = "Supplier :" & vbCrLf
+        ' 
+        ' Text_notes
+        ' 
+        Text_notes.Location = New Point(97, 116)
+        Text_notes.Multiline = True
+        Text_notes.Name = "Text_notes"
+        Text_notes.Size = New Size(703, 48)
+        Text_notes.TabIndex = 6
         ' 
         ' Label4
         ' 
@@ -104,12 +146,12 @@ Partial Class BUBILL
         Label4.TabIndex = 31
         Label4.Text = "Notes :" & vbCrLf
         ' 
-        ' TextBox2
+        ' Text_employee
         ' 
-        TextBox2.Location = New Point(540, 63)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(236, 29)
-        TextBox2.TabIndex = 5
+        Text_employee.Location = New Point(540, 63)
+        Text_employee.Name = "Text_employee"
+        Text_employee.Size = New Size(236, 29)
+        Text_employee.TabIndex = 5
         ' 
         ' Label3
         ' 
@@ -121,15 +163,17 @@ Partial Class BUBILL
         Label3.TabIndex = 29
         Label3.Text = "Employee :" & vbCrLf
         ' 
-        ' Text_unite
+        ' Text_importname
         ' 
-        Text_unite.BackColor = SystemColors.ControlLightLight
-        Text_unite.FlatStyle = FlatStyle.System
-        Text_unite.FormattingEnabled = True
-        Text_unite.Location = New Point(510, 22)
-        Text_unite.Name = "Text_unite"
-        Text_unite.Size = New Size(266, 29)
-        Text_unite.TabIndex = 3
+        Text_importname.AutoCompleteMode = AutoCompleteMode.SuggestAppend
+        Text_importname.AutoCompleteSource = AutoCompleteSource.ListItems
+        Text_importname.BackColor = SystemColors.ControlLightLight
+        Text_importname.FlatStyle = FlatStyle.System
+        Text_importname.FormattingEnabled = True
+        Text_importname.Location = New Point(510, 25)
+        Text_importname.Name = "Text_importname"
+        Text_importname.Size = New Size(266, 29)
+        Text_importname.TabIndex = 3
         ' 
         ' Label11
         ' 
@@ -140,13 +184,6 @@ Partial Class BUBILL
         Label11.Size = New Size(75, 21)
         Label11.TabIndex = 26
         Label11.Text = "Supplier :" & vbCrLf
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(252, 47)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(158, 29)
-        TextBox1.TabIndex = 2
         ' 
         ' Label2
         ' 
@@ -197,12 +234,22 @@ Partial Class BUBILL
         ' 
         GroupBox2.Controls.Add(Label5)
         GroupBox2.Controls.Add(Btn_now)
-        GroupBox2.Controls.Add(TextBox4)
+        GroupBox2.Controls.Add(Text_barcode)
         GroupBox2.Location = New Point(114, 173)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(562, 84)
         GroupBox2.TabIndex = 1
         GroupBox2.TabStop = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label5.Location = New Point(120, 10)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(73, 21)
+        Label5.TabIndex = 32
+        Label5.Text = "Barcode :" & vbCrLf
         ' 
         ' Btn_now
         ' 
@@ -215,12 +262,12 @@ Partial Class BUBILL
         Btn_now.Text = "Insert"
         Btn_now.UseVisualStyleBackColor = True
         ' 
-        ' TextBox4
+        ' Text_barcode
         ' 
-        TextBox4.Location = New Point(53, 36)
-        TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(247, 29)
-        TextBox4.TabIndex = 7
+        Text_barcode.Location = New Point(53, 36)
+        Text_barcode.Name = "Text_barcode"
+        Text_barcode.Size = New Size(247, 29)
+        Text_barcode.TabIndex = 1
         ' 
         ' DataGridView1
         ' 
@@ -231,57 +278,50 @@ Partial Class BUBILL
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7})
         DataGridView1.Location = New Point(11, 263)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.ReadOnly = True
         DataGridView1.RowTemplate.Height = 25
-        DataGridView1.Size = New Size(806, 165)
+        DataGridView1.Size = New Size(795, 165)
         DataGridView1.TabIndex = 2
         ' 
         ' Column1
         ' 
+        Column1.DataPropertyName = "ITEM_CODE"
         Column1.HeaderText = "Code item"
         Column1.Name = "Column1"
-        Column1.ReadOnly = True
         ' 
         ' Column2
         ' 
         Column2.HeaderText = "Name item"
         Column2.Name = "Column2"
-        Column2.ReadOnly = True
         ' 
         ' Column3
         ' 
         Column3.HeaderText = "Name Unite"
         Column3.Name = "Column3"
-        Column3.ReadOnly = True
         ' 
         ' Column4
         ' 
-        Column4.HeaderText = "Cost"
+        Column4.HeaderText = "Price"
         Column4.Name = "Column4"
-        Column4.ReadOnly = True
         ' 
         ' Column5
         ' 
         Column5.HeaderText = "Quantity"
         Column5.Name = "Column5"
-        Column5.ReadOnly = True
         ' 
         ' Column6
         ' 
         Column6.HeaderText = "Discount"
         Column6.Name = "Column6"
-        Column6.ReadOnly = True
         ' 
         ' Column7
         ' 
         Column7.HeaderText = "Total"
         Column7.Name = "Column7"
-        Column7.ReadOnly = True
         ' 
         ' GroupBox3
         ' 
-        GroupBox3.Controls.Add(Button1)
-        GroupBox3.Controls.Add(Btn_Recherche)
+        GroupBox3.Controls.Add(Btn_new)
+        GroupBox3.Controls.Add(Btn_search)
         GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
@@ -289,30 +329,30 @@ Partial Class BUBILL
         GroupBox3.Location = New Point(32, 428)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(748, 69)
-        GroupBox3.TabIndex = 11
+        GroupBox3.TabIndex = 3
         GroupBox3.TabStop = False
         ' 
-        ' Button1
+        ' Btn_new
         ' 
-        Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.ImageAlign = ContentAlignment.MiddleRight
-        Button1.Location = New Point(6, 18)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(117, 34)
-        Button1.TabIndex = 11
-        Button1.Text = "Nuevo"
-        Button1.UseVisualStyleBackColor = True
+        Btn_new.Image = CType(resources.GetObject("Btn_new.Image"), Image)
+        Btn_new.ImageAlign = ContentAlignment.MiddleRight
+        Btn_new.Location = New Point(6, 18)
+        Btn_new.Name = "Btn_new"
+        Btn_new.Size = New Size(117, 34)
+        Btn_new.TabIndex = 1
+        Btn_new.Text = "New"
+        Btn_new.UseVisualStyleBackColor = True
         ' 
-        ' Btn_Recherche
+        ' Btn_search
         ' 
-        Btn_Recherche.Image = CType(resources.GetObject("Btn_Recherche.Image"), Image)
-        Btn_Recherche.ImageAlign = ContentAlignment.MiddleRight
-        Btn_Recherche.Location = New Point(618, 18)
-        Btn_Recherche.Name = "Btn_Recherche"
-        Btn_Recherche.Size = New Size(117, 34)
-        Btn_Recherche.TabIndex = 15
-        Btn_Recherche.Text = "Buscar"
-        Btn_Recherche.UseVisualStyleBackColor = True
+        Btn_search.Image = CType(resources.GetObject("Btn_search.Image"), Image)
+        Btn_search.ImageAlign = ContentAlignment.MiddleRight
+        Btn_search.Location = New Point(618, 18)
+        Btn_search.Name = "Btn_search"
+        Btn_search.Size = New Size(117, 34)
+        Btn_search.TabIndex = 6
+        Btn_search.Text = "Search"
+        Btn_search.UseVisualStyleBackColor = True
         ' 
         ' Btn_back
         ' 
@@ -321,8 +361,8 @@ Partial Class BUBILL
         Btn_back.Location = New Point(498, 18)
         Btn_back.Name = "Btn_back"
         Btn_back.Size = New Size(117, 34)
-        Btn_back.TabIndex = 14
-        Btn_back.Text = "Atrás"
+        Btn_back.TabIndex = 5
+        Btn_back.Text = "Back"
         Btn_back.UseVisualStyleBackColor = True
         ' 
         ' Btn_delete
@@ -332,8 +372,8 @@ Partial Class BUBILL
         Btn_delete.Location = New Point(375, 18)
         Btn_delete.Name = "Btn_delete"
         Btn_delete.Size = New Size(117, 34)
-        Btn_delete.TabIndex = 14
-        Btn_delete.Text = "Borrar"
+        Btn_delete.TabIndex = 4
+        Btn_delete.Text = "Delete"
         Btn_delete.UseVisualStyleBackColor = True
         ' 
         ' Btn_edit
@@ -345,7 +385,7 @@ Partial Class BUBILL
         Btn_edit.Name = "Btn_edit"
         Btn_edit.Size = New Size(117, 34)
         Btn_edit.TabIndex = 3
-        Btn_edit.Text = "Enmienda    "
+        Btn_edit.Text = "Edite   "
         Btn_edit.UseVisualStyleBackColor = True
         ' 
         ' Btn_save
@@ -355,41 +395,115 @@ Partial Class BUBILL
         Btn_save.Location = New Point(129, 18)
         Btn_save.Name = "Btn_save"
         Btn_save.Size = New Size(117, 34)
-        Btn_save.TabIndex = 12
-        Btn_save.Text = "Memoriza   "
+        Btn_save.TabIndex = 2
+        Btn_save.Text = "Save "
         Btn_save.UseVisualStyleBackColor = True
         ' 
-        ' Label5
+        ' GroupBox4
         ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.Location = New Point(120, 10)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(73, 21)
-        Label5.TabIndex = 32
-        Label5.Text = "Barcode :" & vbCrLf
+        GroupBox4.Controls.Add(Label12)
+        GroupBox4.Controls.Add(Text_TOTALARABIC)
+        GroupBox4.Controls.Add(Text_discount)
+        GroupBox4.Controls.Add(Label9)
+        GroupBox4.Controls.Add(Text_totalqty)
+        GroupBox4.Controls.Add(Label7)
+        GroupBox4.Controls.Add(Text_total)
+        GroupBox4.Controls.Add(Label8)
+        GroupBox4.Location = New Point(12, 503)
+        GroupBox4.Name = "GroupBox4"
+        GroupBox4.Size = New Size(805, 116)
+        GroupBox4.TabIndex = 4
+        GroupBox4.TabStop = False
+        GroupBox4.Text = "Détails invoice"
         ' 
-        ' Label6
+        ' Label12
         ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(429, 28)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(75, 21)
-        Label6.TabIndex = 32
-        Label6.Text = "Supplier :" & vbCrLf
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label12.Location = New Point(13, 74)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(117, 21)
+        Label12.TabIndex = 41
+        Label12.Text = "TOTAL ARABIC :"
+        ' 
+        ' Text_TOTALARABIC
+        ' 
+        Text_TOTALARABIC.Location = New Point(139, 71)
+        Text_TOTALARABIC.Multiline = True
+        Text_TOTALARABIC.Name = "Text_TOTALARABIC"
+        Text_TOTALARABIC.Size = New Size(419, 32)
+        Text_TOTALARABIC.TabIndex = 40
+        ' 
+        ' Text_discount
+        ' 
+        Text_discount.Location = New Point(637, 28)
+        Text_discount.Multiline = True
+        Text_discount.Name = "Text_discount"
+        Text_discount.Size = New Size(136, 32)
+        Text_discount.TabIndex = 3
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label9.Location = New Point(551, 33)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(78, 21)
+        Label9.TabIndex = 39
+        Label9.Text = "Discount :" & vbCrLf
+        ' 
+        ' Text_totalqty
+        ' 
+        Text_totalqty.Location = New Point(360, 30)
+        Text_totalqty.Multiline = True
+        Text_totalqty.Name = "Text_totalqty"
+        Text_totalqty.Size = New Size(136, 32)
+        Text_totalqty.TabIndex = 2
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label7.Location = New Point(246, 35)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(113, 21)
+        Label7.TabIndex = 37
+        Label7.Text = "Total Quantity :" & vbCrLf
+        ' 
+        ' Text_total
+        ' 
+        Text_total.Location = New Point(77, 30)
+        Text_total.Multiline = True
+        Text_total.Name = "Text_total"
+        Text_total.Size = New Size(136, 32)
+        Text_total.TabIndex = 1
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        Label8.Location = New Point(13, 35)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(49, 21)
+        Label8.TabIndex = 35
+        Label8.Text = "Total :" & vbCrLf
         ' 
         ' BUBILL
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(830, 508)
+        ClientSize = New Size(818, 631)
+        Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
         Controls.Add(DataGridView1)
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        KeyPreview = True
         Margin = New Padding(4)
+        MaximizeBox = False
+        MdiChildrenMinimizedAnchorBottom = False
+        MinimizeBox = False
         Name = "BUBILL"
         Text = "Purchase Invoice"
         GroupBox1.ResumeLayout(False)
@@ -398,6 +512,8 @@ Partial Class BUBILL
         GroupBox2.PerformLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         GroupBox3.ResumeLayout(False)
+        GroupBox4.ResumeLayout(False)
+        GroupBox4.PerformLayout()
         ResumeLayout(False)
     End Sub
 
@@ -406,18 +522,37 @@ Partial Class BUBILL
     Friend WithEvents Label10 As Label
     Friend WithEvents Text_code As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Text_notes As TextBox
     Friend WithEvents Label4 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Text_employee As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Text_unite As ComboBox
+    Friend WithEvents Text_importname As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Text_barcode As TextBox
     Friend WithEvents Btn_now As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Btn_new As Button
+    Friend WithEvents Btn_search As Button
+    Friend WithEvents Btn_back As Button
+    Friend WithEvents Btn_delete As Button
+    Friend WithEvents Btn_edit As Button
+    Friend WithEvents Btn_save As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents Text_discount As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Text_totalqty As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Text_total As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Text_type As ComboBox
+    Friend WithEvents Text_TOTALARABIC As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -425,13 +560,4 @@ Partial Class BUBILL
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Btn_Recherche As Button
-    Friend WithEvents Btn_back As Button
-    Friend WithEvents Btn_delete As Button
-    Friend WithEvents Btn_edit As Button
-    Friend WithEvents Btn_save As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
 End Class

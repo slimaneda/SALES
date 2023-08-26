@@ -121,7 +121,7 @@
   <data name="Btn_now.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAxNJREFUSEuVlUtPE1EUxyfzWfoVKM8OfUHfLYW+UIEGogIm8nAjpImwgZWudaHf
+        vAAADrwBlbxySQAAAxNJREFUSEuVlUtPE1EUxyfzWfoVKM8OfUHfLYW+UIEGogIm8nAjpImwgZWudaHf
         oBshRE2kMdGNxERKKX1MpzQQYyluxAKCw/Ge6bSdcqdoT/Jrzp37P78zqynTrEL7HnY479EQIoQYoUgQ
         ZbDHZ3inGSZZeUy18LKBkODWEKKhvFskwD8QpSyZUXMRpJKaYN7FBgRXOCi4ygRokbI8qxTXFjAB3sn6
         c87FgOAENWYPJuFZcRWefl+FycJY/S6nyJFedtTF1fLnHGECCdDcL4zCuXgOV1dXEscXJQgJHtUs4iMu
@@ -158,7 +158,7 @@
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Btn_new.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAfpJREFUSEtj
         GAWjAC9Q0zXWcPYMWu7iHXLY0StwGYgPlaIOcPEInunmG/Y/p6ji/7KVa8E0iO/sFTYDqoQyYG5u7wh0
@@ -172,7 +172,7 @@
         HHeK2XXcKXZWkro6L1QYCBgYAPf4ENYTi7z+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Btn_Recherche.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Btn_search.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAhBJREFUSEvd
         lb+uKVEUxocIUdGJQocEEYVoRKXwBN5B5wU8AFoKnVaCRqKQKDRKIpH4U1BJEIUIUSCse79lz8SYc+a4

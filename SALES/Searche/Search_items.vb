@@ -2,9 +2,9 @@
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
         If ComboBox1.SelectedIndex = 0 Then
             Dim dt As New DataTable
-            Dim da As New SqlClient.SqlDataAdapter
+            'Dim da As New SqlClient.SqlDataAdapter
             dt.Clear()
-            da = New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_NAME LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
+            Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_NAME LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
 
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
@@ -12,9 +12,9 @@
 
         If ComboBox1.SelectedIndex = 1 Then
             Dim dt As New DataTable
-            Dim da As New SqlClient.SqlDataAdapter
+            'Dim da As New SqlClient.SqlDataAdapter
             dt.Clear()
-            da = New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_CODE LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
+            Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_CODE LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
 
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
@@ -26,6 +26,7 @@
         For i As Integer = 0 To DataGridView1.Rows.Count - 1
             DataGridView1.Rows(i).Cells(0).Value = " Show "
             Dim row As DataGridViewRow = DataGridView1.Rows(i)
+
         Next
     End Sub
 
