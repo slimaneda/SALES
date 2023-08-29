@@ -142,4 +142,4 @@ Public Class BUBILL
     Private Sub Btn_now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         bar()
     End Sub
-    End Classryru-
+End Class
