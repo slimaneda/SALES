@@ -47,7 +47,7 @@
         Next
         CheckBox1.Checked = False
         Text_code.Text = CODE_GEN("ITEMS", "ITEM_CODE") + 1
-        Btn_back.Enabled = False
+
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
         Btn_save.Enabled = True
@@ -64,6 +64,8 @@
         If Text_name.Text = "" Then
             Text_name.BackColor = Color.Red
             Text_name.Select()
+            Exit Sub
+
         Else
             Text_name.BackColor = Color.White
             Text_name.Select()
@@ -71,18 +73,20 @@
             If Text_barcode.Text = "" Then
                 Text_barcode.BackColor = Color.Red
                 Text_barcode.Select()
+                Exit Sub
             Else
                 Text_barcode.BackColor = Color.Wheat
                 Text_barcode.Select()
 
                 If Val(Text_costprice.Text) > Val(Text_sellingprice.Text) Then
-                    MessageBox.Show("سعر التكلفة اكبر من سعر البيع ", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    If DialogResult = MessageBox.Show("سعر التكلفة اكبر من سعر البيع are you sur de confie=rmer ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) = DialogResult.Cancel Then Exit Sub
+
                 End If
-                If Val(Text_costprice.Text) = Val(Text_sellingprice.Text) Then
-                    MessageBox.Show("سعر التكلفة يساوي من سعر البيع ", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    If Val(Text_costprice.Text) = Val(Text_sellingprice.Text) Then
+                    If MessageBox.Show("سعر التكلفة يساوي من سعر البيع ", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.Cancel Then Exit Sub
                 End If
-            End If
-        End If
+                End If
+                End If
         '----------------------------------------------------------------------------
         'code save------------------------------------------------------------------
         Dim dt As New DataTable
@@ -207,8 +211,13 @@
         Search_items.ShowDialog()
     End Sub
 
-    Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
-        Main_Page.ShowDialog()
 
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit the program?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
     End Sub
 End Class

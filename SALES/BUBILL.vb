@@ -2,6 +2,23 @@
 
 Public Class BUBILL
 
+    Sub calc()
+        For i = 0 To DataGridView1.Rows.Count - 1
+            DataGridView1.Rows(i).Cells(6).Value = Val(DataGridView1.Rows(i).Cells(3).Value) * Val(DataGridView1.Rows(i).Cells(4).Value)
+
+        Next
+        Dim total_, descount_, qty_ As Double
+        For i = 0 To DataGridView1.Rows.Count - 1
+            total_ = Val(total_) + Val(DataGridView1.Rows(i).Cells(6).Value)
+            descount_ = Val(descount_) + Val(DataGridView1.Rows(i).Cells(5).Value)
+            qty_ = Val(qty_) + Val(DataGridView1.Rows(i).Cells(4).Value)
+        Next
+
+        Text_total.Text = Val(total_) - Val(descount_)
+        Text_discount.Text = Val(descount_)
+        Text_totalqty.Text = Val(qty_)
+
+    End Sub
 
     Private Sub Btn_new_Click(sender As Object, e As EventArgs) Handles Btn_new.Click
         For i = 0 To GroupBox1.Controls.Count - 1
@@ -19,14 +36,15 @@ Public Class BUBILL
 
 
 
-        Text_code.Text = CODE_GEN("BUY_DET", "ID") + 1
-        'DataGridView1.DataSource = ""
-        Btn_back.Enabled = True
+        Text_code.Text = CODE_GEN("BUY_DET", "BUYCODE") + 1
+        'DataGridView1.DataSource ="" 
+
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
         Btn_save.Enabled = True
         Text_type.SelectedIndex = 0
         Text_barcode.Select()
+        Label6.Text = "Supplier"
 
     End Sub
     '------- supplier جلب ----------------------------------------------
@@ -43,6 +61,7 @@ Public Class BUBILL
     Private Sub BUBILL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Btn_new_Click(sender, e)
         fill_importers()
+        Label6.Text = "Supplier"
 
     End Sub
 
@@ -73,8 +92,9 @@ Public Class BUBILL
 
 
             dt.Rows(add_).Item("BUYCODE") = Text_code.Text
+            dt.Rows(add_).Item("BUYUSER") = Text_employee.Text
             dt.Rows(add_).Item("BUYTYPE") = Text_type.Text
-            dt.Rows(add_).Item("IMPORTERNAME") = Text_importname.Text
+            dt.Rows(add_).Item("IMPORTNAME") = Text_importname.Text
             dt.Rows(add_).Item("BUYDATE") = DTP.Value
 
             dt.Rows(add_).Item("NOTES") = Text_notes.Text
@@ -98,9 +118,7 @@ Public Class BUBILL
 
 
 
-    Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
-        Me.Hide()
-    End Sub
+
 
 
 
@@ -108,6 +126,7 @@ Public Class BUBILL
 
         If Not String.IsNullOrWhiteSpace(Text_barcode.Text) Then
             Dim dt As New DataTable
+
             Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_BAR LIKE '" & Text_barcode.Text & "'", Sqlcon)
             da.Fill(dt)
 
@@ -117,6 +136,7 @@ Public Class BUBILL
                 For i As Integer = 0 To DataGridView1.Rows.Count - 1
                     If DataGridView1.Rows(i).Cells(0).Value.ToString() = itemCode Then
                         DataGridView1.Rows(i).Cells(4).Value = CInt(DataGridView1.Rows(i).Cells(4).Value) + 1
+                        calc()
                         'Text_barcode.Clear()
                         Exit Sub
                     End If
@@ -131,15 +151,59 @@ Public Class BUBILL
                 DataGridView1(2, ADD_).Value = dt.Rows(0).Item("ITEM_UNIT")
                 DataGridView1(3, ADD_).Value = dt.Rows(0).Item("ITEM_TKLFA")
                 DataGridView1(4, ADD_).Value = 1
-
-                'Text_barcode.Clear()
+                calc()
+                ' DataGridView1.DataSource = DT.DefaultView
+                ' Text_barcode.Clear()
             End If
         End If
+        Text_barcode.Clear()
+        Text_barcode.Select()
+
+
+        calc()
+
     End Sub
 
 
 
+
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to exit the program?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+
+        If result = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+
+
+        Text_TOTALARABIC.Text = NumberToString(Text_total.Text, use_us_group_names:=True)
+
+
+
+    End Sub
+
+    Private Sub Text_total_TextChanged(sender As Object, e As EventArgs) Handles Text_total.TextChanged
+        Text_TOTALARABIC.Text = NumberToString(Text_total.Text, use_us_group_names:=True)
+
+    End Sub
+
+    Private Sub Text_barcode_TextChanged(sender As Object, e As EventArgs) Handles Text_barcode.TextChanged
+        bar()
+    End Sub
+
     Private Sub Btn_now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         bar()
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        calc()
+
+    End Sub
+
+    Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
+        calc()
     End Sub
 End Class

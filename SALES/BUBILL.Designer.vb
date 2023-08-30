@@ -42,17 +42,11 @@ Partial Class BUBILL
         Btn_now = New Button()
         Text_barcode = New TextBox()
         DataGridView1 = New DataGridView()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
-        Column6 = New DataGridViewTextBoxColumn()
-        Column7 = New DataGridViewTextBoxColumn()
         GroupBox3 = New GroupBox()
+        IconButton2 = New FontAwesome.Sharp.IconButton()
+        IconButton1 = New FontAwesome.Sharp.IconButton()
         Btn_new = New Button()
         Btn_search = New Button()
-        Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
         Btn_save = New Button()
@@ -65,6 +59,13 @@ Partial Class BUBILL
         Label7 = New Label()
         Text_total = New TextBox()
         Label8 = New Label()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
+        Column7 = New DataGridViewTextBoxColumn()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -117,7 +118,7 @@ Partial Class BUBILL
         ' 
         ' Text_notes
         ' 
-        Text_notes.Location = New Point(97, 116)
+        Text_notes.Location = New Point(97, 106)
         Text_notes.Multiline = True
         Text_notes.Name = "Text_notes"
         Text_notes.Size = New Size(703, 48)
@@ -127,7 +128,7 @@ Partial Class BUBILL
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(7, 128)
+        Label4.Location = New Point(7, 118)
         Label4.Name = "Label4"
         Label4.Size = New Size(58, 21)
         Label4.TabIndex = 31
@@ -222,9 +223,9 @@ Partial Class BUBILL
         GroupBox2.Controls.Add(Label5)
         GroupBox2.Controls.Add(Btn_now)
         GroupBox2.Controls.Add(Text_barcode)
-        GroupBox2.Location = New Point(114, 173)
+        GroupBox2.Location = New Point(114, 165)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(562, 84)
+        GroupBox2.Size = New Size(562, 62)
         GroupBox2.TabIndex = 1
         GroupBox2.TabStop = False
         ' 
@@ -232,7 +233,7 @@ Partial Class BUBILL
         ' 
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label5.Location = New Point(120, 10)
+        Label5.Location = New Point(120, 5)
         Label5.Name = "Label5"
         Label5.Size = New Size(73, 21)
         Label5.TabIndex = 32
@@ -242,82 +243,83 @@ Partial Class BUBILL
         ' 
         Btn_now.Image = CType(resources.GetObject("Btn_now.Image"), Image)
         Btn_now.ImageAlign = ContentAlignment.MiddleRight
-        Btn_now.Location = New Point(379, 31)
+        Btn_now.Location = New Point(379, 25)
         Btn_now.Name = "Btn_now"
-        Btn_now.Size = New Size(117, 34)
+        Btn_now.Size = New Size(154, 34)
         Btn_now.TabIndex = 8
-        Btn_now.Text = "Insert"
+        Btn_now.Text = "Insert Qty item      "
+        Btn_now.TextAlign = ContentAlignment.MiddleLeft
         Btn_now.UseVisualStyleBackColor = True
         ' 
         ' Text_barcode
         ' 
-        Text_barcode.Location = New Point(53, 36)
+        Text_barcode.Location = New Point(92, 29)
         Text_barcode.Name = "Text_barcode"
+        Text_barcode.PlaceholderText = " insert Code Barcode item "
         Text_barcode.Size = New Size(247, 29)
         Text_barcode.TabIndex = 1
         ' 
         ' DataGridView1
         ' 
+        DataGridView1.AccessibleRole = AccessibleRole.None
         DataGridView1.AllowUserToAddRows = False
         DataGridView1.AllowUserToDeleteRows = False
+        DataGridView1.AllowUserToResizeColumns = False
+        DataGridView1.AllowUserToResizeRows = False
         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        DataGridView1.BackgroundColor = Color.DarkGray
+        DataGridView1.BorderStyle = BorderStyle.None
+        DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None
+        DataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridView1.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7})
-        DataGridView1.Location = New Point(11, 263)
+        DataGridView1.Location = New Point(11, 231)
         DataGridView1.Name = "DataGridView1"
+        DataGridView1.ReadOnly = True
         DataGridView1.RowTemplate.Height = 25
         DataGridView1.Size = New Size(795, 165)
         DataGridView1.TabIndex = 2
         ' 
-        ' Column1
-        ' 
-        Column1.DataPropertyName = "ITEM_CODE"
-        Column1.HeaderText = "Code item"
-        Column1.Name = "Column1"
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "Name item"
-        Column2.Name = "Column2"
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Name Unite"
-        Column3.Name = "Column3"
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Price"
-        Column4.Name = "Column4"
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Quantity"
-        Column5.Name = "Column5"
-        ' 
-        ' Column6
-        ' 
-        Column6.HeaderText = "Discount"
-        Column6.Name = "Column6"
-        ' 
-        ' Column7
-        ' 
-        Column7.HeaderText = "Total"
-        Column7.Name = "Column7"
-        ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(IconButton2)
+        GroupBox3.Controls.Add(IconButton1)
         GroupBox3.Controls.Add(Btn_new)
         GroupBox3.Controls.Add(Btn_search)
-        GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
-        GroupBox3.Location = New Point(32, 428)
+        GroupBox3.Location = New Point(32, 403)
         GroupBox3.Name = "GroupBox3"
         GroupBox3.Size = New Size(748, 69)
         GroupBox3.TabIndex = 3
         GroupBox3.TabStop = False
+        ' 
+        ' IconButton2
+        ' 
+        IconButton2.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton2.IconColor = Color.Black
+        IconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton2.IconSize = 30
+        IconButton2.ImageAlign = ContentAlignment.TopCenter
+        IconButton2.Location = New Point(677, 18)
+        IconButton2.Name = "IconButton2"
+        IconButton2.Size = New Size(34, 34)
+        IconButton2.TabIndex = 9
+        IconButton2.UseVisualStyleBackColor = True
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.IconSize = 30
+        IconButton1.ImageAlign = ContentAlignment.TopCenter
+        IconButton1.Location = New Point(617, 18)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(34, 34)
+        IconButton1.TabIndex = 8
+        IconButton1.UseVisualStyleBackColor = True
         ' 
         ' Btn_new
         ' 
@@ -334,23 +336,12 @@ Partial Class BUBILL
         ' 
         Btn_search.Image = CType(resources.GetObject("Btn_search.Image"), Image)
         Btn_search.ImageAlign = ContentAlignment.MiddleRight
-        Btn_search.Location = New Point(618, 18)
+        Btn_search.Location = New Point(498, 18)
         Btn_search.Name = "Btn_search"
         Btn_search.Size = New Size(117, 34)
         Btn_search.TabIndex = 6
         Btn_search.Text = "Search"
         Btn_search.UseVisualStyleBackColor = True
-        ' 
-        ' Btn_back
-        ' 
-        Btn_back.Image = CType(resources.GetObject("Btn_back.Image"), Image)
-        Btn_back.ImageAlign = ContentAlignment.MiddleRight
-        Btn_back.Location = New Point(498, 18)
-        Btn_back.Name = "Btn_back"
-        Btn_back.Size = New Size(117, 34)
-        Btn_back.TabIndex = 5
-        Btn_back.Text = "Back"
-        Btn_back.UseVisualStyleBackColor = True
         ' 
         ' Btn_delete
         ' 
@@ -396,7 +387,7 @@ Partial Class BUBILL
         GroupBox4.Controls.Add(Label7)
         GroupBox4.Controls.Add(Text_total)
         GroupBox4.Controls.Add(Label8)
-        GroupBox4.Location = New Point(12, 503)
+        GroupBox4.Location = New Point(12, 478)
         GroupBox4.Name = "GroupBox4"
         GroupBox4.Size = New Size(805, 116)
         GroupBox4.TabIndex = 4
@@ -475,12 +466,56 @@ Partial Class BUBILL
         Label8.TabIndex = 35
         Label8.Text = "Total :" & vbCrLf
         ' 
+        ' Column1
+        ' 
+        Column1.DataPropertyName = "ITEM_CODE"
+        Column1.HeaderText = "Code item"
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Name item"
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Name Unite"
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Price"
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Quantity"
+        Column5.Name = "Column5"
+        Column5.ReadOnly = True
+        ' 
+        ' Column6
+        ' 
+        Column6.DataPropertyName = "DISCOUNT"
+        Column6.HeaderText = "Discount"
+        Column6.Name = "Column6"
+        Column6.ReadOnly = True
+        ' 
+        ' Column7
+        ' 
+        Column7.HeaderText = "Total"
+        Column7.Name = "Column7"
+        Column7.ReadOnly = True
+        ' 
         ' BUBILL
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
-        ClientSize = New Size(818, 631)
+        ClientSize = New Size(818, 601)
         Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
         Controls.Add(DataGridView1)
@@ -525,7 +560,6 @@ Partial Class BUBILL
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Btn_new As Button
     Friend WithEvents Btn_search As Button
-    Friend WithEvents Btn_back As Button
     Friend WithEvents Btn_delete As Button
     Friend WithEvents Btn_edit As Button
     Friend WithEvents Btn_save As Button
@@ -541,6 +575,8 @@ Partial Class BUBILL
     Friend WithEvents Text_type As ComboBox
     Friend WithEvents Text_TOTALARABIC As TextBox
     Friend WithEvents Label12 As Label
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn

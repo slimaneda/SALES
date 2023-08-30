@@ -26,16 +26,18 @@ Partial Class Main_Page
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Main_Page))
         ToolTip1 = New ToolTip(components)
         Panel1 = New Panel()
+        PictureBox1 = New PictureBox()
         Panel3 = New Panel()
+        Panel4 = New Panel()
         btn_accuel = New FontAwesome.Sharp.IconButton()
         btn_purchases = New FontAwesome.Sharp.IconButton()
         btn_customers = New FontAwesome.Sharp.IconButton()
         btn_items = New FontAwesome.Sharp.IconButton()
         btn_supplier = New FontAwesome.Sharp.IconButton()
         Panel2 = New Panel()
-        PictureBox1 = New PictureBox()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -51,16 +53,36 @@ Partial Class Main_Page
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(168, 609)
+        Panel1.Size = New Size(194, 609)
         Panel1.TabIndex = 4
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(10, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(161, 107)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 11
+        PictureBox1.TabStop = False
         ' 
         ' Panel3
         ' 
         Panel3.BackColor = Color.Green
-        Panel3.Location = New Point(0, 323)
+        Panel3.Controls.Add(Panel4)
+        Panel3.Location = New Point(160, 288)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(166, 4)
+        Panel3.Size = New Size(10, 38)
         Panel3.TabIndex = 10
+        ' 
+        ' Panel4
+        ' 
+        Panel4.BackColor = Color.Green
+        Panel4.Location = New Point(22, 0)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(10, 38)
+        Panel4.TabIndex = 11
         ' 
         ' btn_accuel
         ' 
@@ -74,7 +96,7 @@ Partial Class Main_Page
         btn_accuel.IconFont = FontAwesome.Sharp.IconFont.Auto
         btn_accuel.IconSize = 30
         btn_accuel.ImageAlign = ContentAlignment.MiddleLeft
-        btn_accuel.Location = New Point(-1, 116)
+        btn_accuel.Location = New Point(6, 116)
         btn_accuel.Name = "btn_accuel"
         btn_accuel.Size = New Size(166, 40)
         btn_accuel.TabIndex = 9
@@ -93,7 +115,7 @@ Partial Class Main_Page
         btn_purchases.IconFont = FontAwesome.Sharp.IconFont.Auto
         btn_purchases.IconSize = 30
         btn_purchases.ImageAlign = ContentAlignment.MiddleLeft
-        btn_purchases.Location = New Point(-1, 204)
+        btn_purchases.Location = New Point(6, 204)
         btn_purchases.Name = "btn_purchases"
         btn_purchases.Size = New Size(165, 40)
         btn_purchases.TabIndex = 8
@@ -111,7 +133,7 @@ Partial Class Main_Page
         btn_customers.IconFont = FontAwesome.Sharp.IconFont.Auto
         btn_customers.IconSize = 30
         btn_customers.ImageAlign = ContentAlignment.MiddleLeft
-        btn_customers.Location = New Point(-1, 246)
+        btn_customers.Location = New Point(6, 246)
         btn_customers.Name = "btn_customers"
         btn_customers.Size = New Size(166, 40)
         btn_customers.TabIndex = 7
@@ -128,7 +150,7 @@ Partial Class Main_Page
         btn_items.IconFont = FontAwesome.Sharp.IconFont.Auto
         btn_items.IconSize = 30
         btn_items.ImageAlign = ContentAlignment.MiddleLeft
-        btn_items.Location = New Point(-1, 287)
+        btn_items.Location = New Point(6, 287)
         btn_items.Name = "btn_items"
         btn_items.Size = New Size(166, 40)
         btn_items.TabIndex = 6
@@ -147,9 +169,9 @@ Partial Class Main_Page
         btn_supplier.IconFont = FontAwesome.Sharp.IconFont.Auto
         btn_supplier.IconSize = 30
         btn_supplier.ImageAlign = ContentAlignment.MiddleLeft
-        btn_supplier.Location = New Point(-1, 160)
+        btn_supplier.Location = New Point(6, 160)
         btn_supplier.Name = "btn_supplier"
-        btn_supplier.Size = New Size(166, 40)
+        btn_supplier.Size = New Size(164, 40)
         btn_supplier.TabIndex = 5
         btn_supplier.Text = "      Page Suppliers"
         btn_supplier.UseVisualStyleBackColor = False
@@ -157,21 +179,10 @@ Partial Class Main_Page
         ' Panel2
         ' 
         Panel2.BackColor = SystemColors.ButtonFace
-        Panel2.Location = New Point(171, 0)
+        Panel2.Location = New Point(176, 0)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(885, 606)
+        Panel2.Size = New Size(880, 606)
         Panel2.TabIndex = 5
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.BackColor = Color.Transparent
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(3, 3)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(161, 107)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 11
-        PictureBox1.TabStop = False
         ' 
         ' Main_Page
         ' 
@@ -194,6 +205,7 @@ Partial Class Main_Page
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        Panel3.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents ToolTip1 As ToolTip
@@ -206,4 +218,5 @@ Partial Class Main_Page
     Friend WithEvents btn_accuel As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel4 As Panel
 End Class

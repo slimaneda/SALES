@@ -66,10 +66,11 @@
                 MessageBox.Show(" por favor escribe Título de proveedor ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Text_phone.Select()
                 Exit Sub
-
-                '----------------------------------------------------------------------------
-                'code save------------------------------------------------------------------
-                Dim dt As New DataTable
+            End If
+        End If
+        '----------------------------------------------------------------------------
+        'code save------------------------------------------------------------------
+        Dim dt As New DataTable
                 Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS where IMP_NAME = '" & Tex_name.Text & "'  or IMP_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
                 da.Fill(dt)
                 If dt.Rows.Count > 0 Then
@@ -92,8 +93,7 @@
                     MessageBox.Show(" Agregado exitosamente ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Butt_Now_Click(sender, e)
                 End If
-            End If
-        End If
+
     End Sub
 
     Private Sub Btn_edit_Click(sender As Object, e As EventArgs) Handles Btn_edit.Click

@@ -51,8 +51,8 @@ Partial Class Customers
         Btn_save = New Button()
         Btn_now = New Button()
         GroupBox3 = New GroupBox()
-        ErrorProvider1 = New ErrorProvider(components)
         IconButton1 = New FontAwesome.Sharp.IconButton()
+        ErrorProvider1 = New ErrorProvider(components)
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox3.SuspendLayout()
@@ -333,10 +333,6 @@ Partial Class Customers
         GroupBox3.TabIndex = 7
         GroupBox3.TabStop = False
         ' 
-        ' ErrorProvider1
-        ' 
-        ErrorProvider1.ContainerControl = Me
-        ' 
         ' IconButton1
         ' 
         IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
@@ -349,6 +345,10 @@ Partial Class Customers
         IconButton1.Size = New Size(34, 34)
         IconButton1.TabIndex = 7
         IconButton1.UseVisualStyleBackColor = True
+        ' 
+        ' ErrorProvider1
+        ' 
+        ErrorProvider1.ContainerControl = Me
         ' 
         ' Customers
         ' 

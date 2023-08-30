@@ -187,16 +187,6 @@
         gg==
 </value>
   </data>
-  <data name="Btn_back.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAARhJREFUSEvV
-        1TFKA0EUh/E1Klp5gqidIdhooYIkKLGyyiVS5RBiYWNlYcgN9BoBEZMiwaAQiaLgGaKgoMTvE9JZvkHy
-        h1+x27ydmfdms2nILNaw/PuUKLto4QiLvojODu7wjCrmERpX8II31BFawDMo4R6fOEFoLFDGDd5xhhmE
-        ZgvX+EATSwhNAbf4xiXyCI1zMMQYV1hF2DblsIEuLPCEdYTFAs6Bg2YB2/UAoXF6j+EZWKSB8Py1kgrC
-        Y6FN9DA5kyKSxO56hIXsrhWED6Gxq/r4wgXC52SSbXilOPHnCJ944921hzZGOEWSbbPQPgZwRf6sksVC
-        r3BFNcwhSbwBHmDnHSJpoQ7ctgVfpIhfb3t7M/9nsuwHXk026RufWZ4AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="Btn_delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAANVJREFUSEut
