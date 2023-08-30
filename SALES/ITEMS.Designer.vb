@@ -364,11 +364,11 @@ Partial Class ITEMS
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(885, 354)
+        ClientSize = New Size(869, 365)
         Controls.Add(GroupBox1)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ForeColor = SystemColors.ActiveCaptionText
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4)
         MaximizeBox = False
         MdiChildrenMinimizedAnchorBottom = False

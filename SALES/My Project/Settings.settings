@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="sqlcon1" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Data Source=DESKTOP-0P54SP0\SQL;Initial Catalog=DB_SALES;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=DESKTOP-08DDP07\SQLEXPRESS;Initial Catalog=SALES;Integrated Security=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

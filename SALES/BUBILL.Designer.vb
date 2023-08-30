@@ -24,7 +24,6 @@ Partial Class BUBILL
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(BUBILL))
         GroupBox1 = New GroupBox()
-        RadioButton1 = New RadioButton()
         Text_type = New ComboBox()
         Label6 = New Label()
         Text_notes = New TextBox()
@@ -75,7 +74,6 @@ Partial Class BUBILL
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(RadioButton1)
         GroupBox1.Controls.Add(Text_type)
         GroupBox1.Controls.Add(Label6)
         GroupBox1.Controls.Add(Text_notes)
@@ -97,17 +95,6 @@ Partial Class BUBILL
         GroupBox1.TabIndex = 0
         GroupBox1.TabStop = False
         GroupBox1.Text = "Info personelle"
-        ' 
-        ' RadioButton1
-        ' 
-        RadioButton1.AutoSize = True
-        RadioButton1.Location = New Point(468, 91)
-        RadioButton1.Name = "RadioButton1"
-        RadioButton1.Size = New Size(36, 25)
-        RadioButton1.TabIndex = 33
-        RadioButton1.TabStop = True
-        RadioButton1.Text = "v"
-        RadioButton1.UseVisualStyleBackColor = True
         ' 
         ' Text_type
         ' 
@@ -197,7 +184,7 @@ Partial Class BUBILL
         ' 
         ' Text_code
         ' 
-        Text_code.Location = New Point(97, 25)
+        Text_code.Location = New Point(97, 28)
         Text_code.Name = "Text_code"
         Text_code.Size = New Size(88, 29)
         Text_code.TabIndex = 1
@@ -492,6 +479,7 @@ Partial Class BUBILL
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoSize = True
         ClientSize = New Size(818, 631)
         Controls.Add(GroupBox4)
         Controls.Add(GroupBox3)
@@ -499,6 +487,7 @@ Partial Class BUBILL
         Controls.Add(GroupBox2)
         Controls.Add(GroupBox1)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        FormBorderStyle = FormBorderStyle.None
         KeyPreview = True
         Margin = New Padding(4)
         MaximizeBox = False
@@ -552,7 +541,6 @@ Partial Class BUBILL
     Friend WithEvents Text_type As ComboBox
     Friend WithEvents Text_TOTALARABIC As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn

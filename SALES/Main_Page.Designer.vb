@@ -23,71 +23,164 @@ Partial Class Main_Page
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Button1 = New Button()
-        Button2 = New Button()
-        Button3 = New Button()
-        Button4 = New Button()
+        Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(Main_Page))
         ToolTip1 = New ToolTip(components)
+        Panel1 = New Panel()
+        Panel3 = New Panel()
+        btn_accuel = New FontAwesome.Sharp.IconButton()
+        btn_purchases = New FontAwesome.Sharp.IconButton()
+        btn_customers = New FontAwesome.Sharp.IconButton()
+        btn_items = New FontAwesome.Sharp.IconButton()
+        btn_supplier = New FontAwesome.Sharp.IconButton()
+        Panel2 = New Panel()
+        PictureBox1 = New PictureBox()
+        Panel1.SuspendLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' Button1
+        ' Panel1
         ' 
-        Button1.BackColor = Color.FromArgb(CByte(255), CByte(192), CByte(192))
-        Button1.Location = New Point(4, 5)
-        Button1.Margin = New Padding(4, 4, 4, 4)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(208, 147)
-        Button1.TabIndex = 0
-        Button1.Text = "Page Suppliers"
-        ToolTip1.SetToolTip(Button1, "بطاقة مورد ")
-        Button1.UseVisualStyleBackColor = False
+        Panel1.BackColor = Color.Silver
+        Panel1.Controls.Add(PictureBox1)
+        Panel1.Controls.Add(Panel3)
+        Panel1.Controls.Add(btn_accuel)
+        Panel1.Controls.Add(btn_purchases)
+        Panel1.Controls.Add(btn_customers)
+        Panel1.Controls.Add(btn_items)
+        Panel1.Controls.Add(btn_supplier)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
+        Panel1.Name = "Panel1"
+        Panel1.Size = New Size(168, 609)
+        Panel1.TabIndex = 4
         ' 
-        ' Button2
+        ' Panel3
         ' 
-        Button2.BackColor = Color.FromArgb(CByte(255), CByte(255), CByte(192))
-        Button2.Location = New Point(4, 159)
-        Button2.Margin = New Padding(4, 4, 4, 4)
-        Button2.Name = "Button2"
-        Button2.Size = New Size(208, 146)
-        Button2.TabIndex = 1
-        Button2.Text = "Page Customers"
-        ToolTip1.SetToolTip(Button2, "بطاقة زبون")
-        Button2.UseVisualStyleBackColor = False
+        Panel3.BackColor = Color.Green
+        Panel3.Location = New Point(0, 323)
+        Panel3.Name = "Panel3"
+        Panel3.Size = New Size(166, 4)
+        Panel3.TabIndex = 10
         ' 
-        ' Button3
+        ' btn_accuel
         ' 
-        Button3.BackColor = Color.FromArgb(CByte(192), CByte(255), CByte(192))
-        Button3.Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
-        Button3.Location = New Point(220, 5)
-        Button3.Margin = New Padding(4, 4, 4, 4)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(208, 147)
-        Button3.TabIndex = 2
-        Button3.Text = "Page items"
-        ToolTip1.SetToolTip(Button3, "بطاقة صنف")
-        Button3.UseVisualStyleBackColor = False
+        btn_accuel.AutoSize = True
+        btn_accuel.BackColor = Color.Silver
+        btn_accuel.FlatStyle = FlatStyle.Flat
+        btn_accuel.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_accuel.ForeColor = Color.Black
+        btn_accuel.IconChar = FontAwesome.Sharp.IconChar.House
+        btn_accuel.IconColor = Color.Black
+        btn_accuel.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btn_accuel.IconSize = 30
+        btn_accuel.ImageAlign = ContentAlignment.MiddleLeft
+        btn_accuel.Location = New Point(-1, 116)
+        btn_accuel.Name = "btn_accuel"
+        btn_accuel.Size = New Size(166, 40)
+        btn_accuel.TabIndex = 9
+        btn_accuel.Text = "         Accuel"
+        btn_accuel.TextAlign = ContentAlignment.MiddleLeft
+        btn_accuel.UseVisualStyleBackColor = False
         ' 
-        ' Button4
+        ' btn_purchases
         ' 
-        Button4.BackColor = Color.FromArgb(CByte(192), CByte(255), CByte(255))
-        Button4.Location = New Point(220, 160)
-        Button4.Margin = New Padding(4, 4, 4, 4)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(208, 144)
-        Button4.TabIndex = 3
-        Button4.Text = "Page Purchases"
-        ToolTip1.SetToolTip(Button4, "شاشة المشتريات")
-        Button4.UseVisualStyleBackColor = False
+        btn_purchases.AutoSize = True
+        btn_purchases.FlatStyle = FlatStyle.Flat
+        btn_purchases.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_purchases.ForeColor = Color.Black
+        btn_purchases.IconChar = FontAwesome.Sharp.IconChar.Briefcase
+        btn_purchases.IconColor = Color.Black
+        btn_purchases.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btn_purchases.IconSize = 30
+        btn_purchases.ImageAlign = ContentAlignment.MiddleLeft
+        btn_purchases.Location = New Point(-1, 204)
+        btn_purchases.Name = "btn_purchases"
+        btn_purchases.Size = New Size(165, 40)
+        btn_purchases.TabIndex = 8
+        btn_purchases.Text = "        Page Purchases"
+        btn_purchases.UseVisualStyleBackColor = True
+        ' 
+        ' btn_customers
+        ' 
+        btn_customers.AutoSize = True
+        btn_customers.FlatStyle = FlatStyle.Flat
+        btn_customers.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_customers.ForeColor = Color.Black
+        btn_customers.IconChar = FontAwesome.Sharp.IconChar.Briefcase
+        btn_customers.IconColor = Color.Black
+        btn_customers.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btn_customers.IconSize = 30
+        btn_customers.ImageAlign = ContentAlignment.MiddleLeft
+        btn_customers.Location = New Point(-1, 246)
+        btn_customers.Name = "btn_customers"
+        btn_customers.Size = New Size(166, 40)
+        btn_customers.TabIndex = 7
+        btn_customers.Text = "        Page Customers"
+        btn_customers.UseVisualStyleBackColor = True
+        ' 
+        ' btn_items
+        ' 
+        btn_items.FlatStyle = FlatStyle.Flat
+        btn_items.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_items.ForeColor = Color.Black
+        btn_items.IconChar = FontAwesome.Sharp.IconChar.Briefcase
+        btn_items.IconColor = Color.Black
+        btn_items.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btn_items.IconSize = 30
+        btn_items.ImageAlign = ContentAlignment.MiddleLeft
+        btn_items.Location = New Point(-1, 287)
+        btn_items.Name = "btn_items"
+        btn_items.Size = New Size(166, 40)
+        btn_items.TabIndex = 6
+        btn_items.Text = "Page items"
+        btn_items.UseVisualStyleBackColor = True
+        ' 
+        ' btn_supplier
+        ' 
+        btn_supplier.AutoSize = True
+        btn_supplier.BackColor = Color.Silver
+        btn_supplier.FlatStyle = FlatStyle.Flat
+        btn_supplier.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        btn_supplier.ForeColor = Color.Black
+        btn_supplier.IconChar = FontAwesome.Sharp.IconChar.Briefcase
+        btn_supplier.IconColor = Color.Black
+        btn_supplier.IconFont = FontAwesome.Sharp.IconFont.Auto
+        btn_supplier.IconSize = 30
+        btn_supplier.ImageAlign = ContentAlignment.MiddleLeft
+        btn_supplier.Location = New Point(-1, 160)
+        btn_supplier.Name = "btn_supplier"
+        btn_supplier.Size = New Size(166, 40)
+        btn_supplier.TabIndex = 5
+        btn_supplier.Text = "      Page Suppliers"
+        btn_supplier.UseVisualStyleBackColor = False
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = SystemColors.ButtonFace
+        Panel2.Location = New Point(171, 0)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(885, 606)
+        Panel2.TabIndex = 5
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(3, 3)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(161, 107)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 11
+        PictureBox1.TabStop = False
         ' 
         ' Main_Page
         ' 
         AutoScaleDimensions = New SizeF(12F, 30F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(431, 311)
-        Controls.Add(Button4)
-        Controls.Add(Button3)
-        Controls.Add(Button2)
-        Controls.Add(Button1)
+        AutoSize = True
+        ClientSize = New Size(1058, 609)
+        Controls.Add(Panel2)
+        Controls.Add(Panel1)
         Font = New Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point)
         ForeColor = Color.Black
         FormBorderStyle = FormBorderStyle.FixedSingle
@@ -98,12 +191,19 @@ Partial Class Main_Page
         Name = "Main_Page"
         RightToLeftLayout = True
         Text = "Página principal"
+        Panel1.ResumeLayout(False)
+        Panel1.PerformLayout()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents btn_supplier As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_purchases As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_customers As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_items As FontAwesome.Sharp.IconButton
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents btn_accuel As FontAwesome.Sharp.IconButton
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

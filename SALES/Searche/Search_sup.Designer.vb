@@ -29,9 +29,9 @@ Partial Class Search_sup
         Column4 = New DataGridViewTextBoxColumn()
         Column5 = New DataGridViewTextBoxColumn()
         GroupBox1 = New GroupBox()
-        TextBox1 = New TextBox()
         RadioButton2 = New RadioButton()
         RadioButton1 = New RadioButton()
+        TextBox1 = New TextBox()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -91,22 +91,13 @@ Partial Class Search_sup
         GroupBox1.Controls.Add(RadioButton1)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(DataGridView1)
-        GroupBox1.Location = New Point(-1, 1)
+        GroupBox1.Location = New Point(-1, 0)
         GroupBox1.Margin = New Padding(4)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(4)
-        GroupBox1.Size = New Size(781, 343)
+        GroupBox1.Size = New Size(781, 285)
         GroupBox1.TabIndex = 1
         GroupBox1.TabStop = False
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.BorderStyle = BorderStyle.FixedSingle
-        TextBox1.Location = New Point(229, 48)
-        TextBox1.Margin = New Padding(4)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(381, 29)
-        TextBox1.TabIndex = 3
         ' 
         ' RadioButton2
         ' 
@@ -132,14 +123,23 @@ Partial Class Search_sup
         RadioButton1.Text = "Name "
         RadioButton1.UseVisualStyleBackColor = True
         ' 
+        ' TextBox1
+        ' 
+        TextBox1.BorderStyle = BorderStyle.FixedSingle
+        TextBox1.Location = New Point(229, 48)
+        TextBox1.Margin = New Padding(4)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(381, 29)
+        TextBox1.TabIndex = 3
+
         ' Search_sup
         ' 
-        AutoScaleDimensions = New SizeF(9F, 21F)
+        AutoScaleDimensions = New SizeF(9.0F, 21.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(781, 349)
+        ClientSize = New Size(781, 298)
         Controls.Add(GroupBox1)
-        Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        Font = New Font("Segoe UI", 12.0F, FontStyle.Regular, GraphicsUnit.Point)
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4)
         MaximizeBox = False
         MdiChildrenMinimizedAnchorBottom = False

@@ -32,7 +32,7 @@
 
     Private Sub DataGridView1_Click(sender As Object, e As EventArgs) Handles DataGridView1.Click
         If DataGridView1(0, DataGridView1.CurrentRow.Index).Selected Then
-            Customers.show_detait(DataGridView1.CurrentRow.Cells(1).Value)
+            'Customers.show_detait(DataGridView1.CurrentRow.Cells(1).Value)
             Me.Close()
 
         End If

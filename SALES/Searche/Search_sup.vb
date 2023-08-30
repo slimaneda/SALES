@@ -1,10 +1,8 @@
 ﻿Public Class Search_sup
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
-    End Sub
 
     Private Sub Search_sup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DGV_FILL(DataGridView1, "SELECT * FROM IMPORTERS WHERE STATES = 'true' ORDER BY IMP_CODE")
+        DGV_FILL(DataGridView1, "SELECT * FROM IMPORTERS ORDER BY IMP_CODE")
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -12,20 +10,24 @@
             Dim dt As New DataTable
             Dim da As New SqlClient.SqlDataAdapter
             dt.Clear()
-            da = New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE STATES = 'true' AND IMP_NAME LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
+            da = New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE IMP_NAME LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
 
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
+        Else
+            TextBox1.PlaceholderText = "Search"
         End If
 
         If RadioButton2.Checked = True Then
             Dim dt As New DataTable
             Dim da As New SqlClient.SqlDataAdapter
             dt.Clear()
-            da = New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE STATES = 'true' AND IMP_ADRESS LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
+            da = New SqlClient.SqlDataAdapter("SELECT * FROM IMPORTERS WHERE  IMP_ADRESS LIKE  '%" & TextBox1.Text & "%'", Sqlcon)
 
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
+        Else
+            TextBox1.PlaceholderText = "Search"
         End If
 
 

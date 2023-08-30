@@ -352,7 +352,7 @@ Partial Class SUPPLIERS
         Controls.Add(GroupBox3)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
         ForeColor = Color.Black
-        FormBorderStyle = FormBorderStyle.FixedSingle
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4)
         MaximizeBox = False
         MdiChildrenMinimizedAnchorBottom = False

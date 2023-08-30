@@ -63,7 +63,7 @@ Partial Class Customers
         ' 
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(441, 174)
+        Label6.Location = New Point(441, 158)
         Label6.Name = "Label6"
         Label6.Size = New Size(58, 21)
         Label6.TabIndex = 10
@@ -77,9 +77,9 @@ Partial Class Customers
         GroupBox2.Controls.Add(Label8)
         GroupBox2.Controls.Add(Text_debit)
         GroupBox2.Controls.Add(Label7)
-        GroupBox2.Location = New Point(0, 238)
+        GroupBox2.Location = New Point(0, 216)
         GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(871, 84)
+        GroupBox2.Size = New Size(871, 96)
         GroupBox2.TabIndex = 12
         GroupBox2.TabStop = False
         GroupBox2.Text = "Movimiento de cuenta :"
@@ -87,7 +87,7 @@ Partial Class Customers
         ' Text_diff
         ' 
         Text_diff.BackColor = Color.White
-        Text_diff.Location = New Point(685, 38)
+        Text_diff.Location = New Point(685, 33)
         Text_diff.Name = "Text_diff"
         Text_diff.ReadOnly = True
         Text_diff.Size = New Size(166, 29)
@@ -97,7 +97,7 @@ Partial Class Customers
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label9.Location = New Point(574, 41)
+        Label9.Location = New Point(574, 36)
         Label9.Name = "Label9"
         Label9.Size = New Size(88, 21)
         Label9.TabIndex = 17
@@ -107,7 +107,7 @@ Partial Class Customers
         ' 
         Text_credit.BackColor = Color.White
         Text_credit.ForeColor = SystemColors.MenuHighlight
-        Text_credit.Location = New Point(388, 38)
+        Text_credit.Location = New Point(388, 33)
         Text_credit.Name = "Text_credit"
         Text_credit.ReadOnly = True
         Text_credit.Size = New Size(166, 29)
@@ -117,7 +117,7 @@ Partial Class Customers
         ' 
         Label8.AutoSize = True
         Label8.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label8.Location = New Point(309, 46)
+        Label8.Location = New Point(309, 41)
         Label8.Name = "Label8"
         Label8.Size = New Size(59, 21)
         Label8.TabIndex = 15
@@ -127,7 +127,7 @@ Partial Class Customers
         ' 
         Text_debit.BackColor = Color.White
         Text_debit.ForeColor = Color.Green
-        Text_debit.Location = New Point(103, 38)
+        Text_debit.Location = New Point(103, 33)
         Text_debit.Name = "Text_debit"
         Text_debit.ReadOnly = True
         Text_debit.Size = New Size(166, 29)
@@ -137,7 +137,7 @@ Partial Class Customers
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label7.Location = New Point(10, 41)
+        Label7.Location = New Point(10, 36)
         Label7.Name = "Label7"
         Label7.Size = New Size(54, 21)
         Label7.TabIndex = 13
@@ -145,7 +145,7 @@ Partial Class Customers
         ' 
         ' Text_notes
         ' 
-        Text_notes.Location = New Point(545, 135)
+        Text_notes.Location = New Point(545, 119)
         Text_notes.Multiline = True
         Text_notes.Name = "Text_notes"
         Text_notes.Size = New Size(263, 97)
@@ -153,7 +153,7 @@ Partial Class Customers
         ' 
         ' Text_company
         ' 
-        Text_company.Location = New Point(103, 93)
+        Text_company.Location = New Point(103, 77)
         Text_company.Name = "Text_company"
         Text_company.Size = New Size(220, 29)
         Text_company.TabIndex = 7
@@ -162,7 +162,7 @@ Partial Class Customers
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label4.Location = New Point(10, 93)
+        Label4.Location = New Point(10, 77)
         Label4.Name = "Label4"
         Label4.Size = New Size(64, 21)
         Label4.TabIndex = 6
@@ -170,7 +170,7 @@ Partial Class Customers
         ' 
         ' Text_adress
         ' 
-        Text_adress.Location = New Point(143, 138)
+        Text_adress.Location = New Point(143, 122)
         Text_adress.Name = "Text_adress"
         Text_adress.Size = New Size(263, 29)
         Text_adress.TabIndex = 5
@@ -179,7 +179,7 @@ Partial Class Customers
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label3.Location = New Point(10, 138)
+        Label3.Location = New Point(10, 122)
         Label3.Name = "Label3"
         Label3.Size = New Size(127, 21)
         Label3.TabIndex = 4
@@ -187,7 +187,7 @@ Partial Class Customers
         ' 
         ' Tex_name
         ' 
-        Tex_name.Location = New Point(469, 44)
+        Tex_name.Location = New Point(469, 28)
         Tex_name.Name = "Tex_name"
         Tex_name.Size = New Size(345, 29)
         Tex_name.TabIndex = 3
@@ -196,7 +196,7 @@ Partial Class Customers
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label2.Location = New Point(302, 47)
+        Label2.Location = New Point(302, 31)
         Label2.Name = "Label2"
         Label2.Size = New Size(161, 21)
         Label2.TabIndex = 2
@@ -204,7 +204,7 @@ Partial Class Customers
         ' 
         ' Text_code
         ' 
-        Text_code.Location = New Point(137, 39)
+        Text_code.Location = New Point(137, 23)
         Text_code.Name = "Text_code"
         Text_code.Size = New Size(88, 29)
         Text_code.TabIndex = 1
@@ -213,7 +213,7 @@ Partial Class Customers
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label1.Location = New Point(10, 42)
+        Label1.Location = New Point(10, 26)
         Label1.Name = "Label1"
         Label1.Size = New Size(121, 21)
         Label1.TabIndex = 0
@@ -221,17 +221,17 @@ Partial Class Customers
         ' 
         ' Text_phone
         ' 
-        Text_phone.Location = New Point(545, 90)
+        Text_phone.Location = New Point(545, 74)
         Text_phone.Name = "Text_phone"
         Text_phone.Size = New Size(269, 29)
         Text_phone.TabIndex = 15
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(GroupBox2)
         GroupBox1.Controls.Add(Text_phone)
         GroupBox1.Controls.Add(Label11)
         GroupBox1.Controls.Add(Label6)
-        GroupBox1.Controls.Add(GroupBox2)
         GroupBox1.Controls.Add(Text_notes)
         GroupBox1.Controls.Add(Text_company)
         GroupBox1.Controls.Add(Label4)
@@ -241,9 +241,9 @@ Partial Class Customers
         GroupBox1.Controls.Add(Label2)
         GroupBox1.Controls.Add(Text_code)
         GroupBox1.Controls.Add(Label1)
-        GroupBox1.Location = New Point(7, 8)
+        GroupBox1.Location = New Point(-2, 0)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(871, 322)
+        GroupBox1.Size = New Size(875, 279)
         GroupBox1.TabIndex = 8
         GroupBox1.TabStop = False
         GroupBox1.Text = "Basic Information:"
@@ -252,7 +252,7 @@ Partial Class Customers
         ' 
         Label11.AutoSize = True
         Label11.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label11.Location = New Point(419, 93)
+        Label11.Location = New Point(419, 77)
         Label11.Name = "Label11"
         Label11.Size = New Size(120, 21)
         Label11.TabIndex = 14
@@ -339,9 +339,9 @@ Partial Class Customers
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
         GroupBox3.Controls.Add(Btn_now)
-        GroupBox3.Location = New Point(64, 328)
+        GroupBox3.Location = New Point(49, 300)
         GroupBox3.Name = "GroupBox3"
-        GroupBox3.Size = New Size(748, 69)
+        GroupBox3.Size = New Size(748, 61)
         GroupBox3.TabIndex = 7
         GroupBox3.TabStop = False
         ' 
@@ -353,10 +353,11 @@ Partial Class Customers
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(885, 404)
+        ClientSize = New Size(869, 365)
         Controls.Add(GroupBox1)
         Controls.Add(GroupBox3)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
+        FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(4, 5, 4, 5)
         MaximizeBox = False
         MdiChildrenMinimizedAnchorBottom = False
