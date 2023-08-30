@@ -24,7 +24,6 @@ Partial Class ITEMS
     Private Sub InitializeComponent()
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(ITEMS))
         GroupBox1 = New GroupBox()
-        CheckBox2 = New CheckBox()
         Text_unite = New ComboBox()
         Button1 = New Button()
         Text_qty = New TextBox()
@@ -59,7 +58,6 @@ Partial Class ITEMS
         ' GroupBox1
         ' 
         GroupBox1.BackColor = SystemColors.ButtonFace
-        GroupBox1.Controls.Add(CheckBox2)
         GroupBox1.Controls.Add(Text_unite)
         GroupBox1.Controls.Add(Button1)
         GroupBox1.Controls.Add(Text_qty)
@@ -87,16 +85,6 @@ Partial Class ITEMS
         GroupBox1.TabIndex = 9
         GroupBox1.TabStop = False
         GroupBox1.Text = "Basic Information:"
-        ' 
-        ' CheckBox2
-        ' 
-        CheckBox2.AutoSize = True
-        CheckBox2.Font = New Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point)
-        CheckBox2.Location = New Point(545, 259)
-        CheckBox2.Name = "CheckBox2"
-        CheckBox2.Size = New Size(15, 14)
-        CheckBox2.TabIndex = 21
-        CheckBox2.UseVisualStyleBackColor = True
         ' 
         ' Text_unite
         ' 
@@ -405,7 +393,6 @@ Partial Class ITEMS
     Friend WithEvents DTP As DateTimePicker
     Friend WithEvents Label10 As Label
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Text_qty As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button1 As Button
