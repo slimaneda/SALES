@@ -37,7 +37,7 @@ Public Class BUBILL
 
 
         Text_code.Text = CODE_GEN("BUY_DET", "BUYCODE") + 1
-        'DataGridView1.DataSource ="" 
+        'DataGridView1.DataSource =" " 
 
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
