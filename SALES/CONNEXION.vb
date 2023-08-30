@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Module CONNEXION
     Public Sqlcon As New SqlClient.SqlConnection
+
     '------------connexion to sqlserver-----------
     Public Sub Open_connexion()
         If Sqlcon.State = 1 Then Sqlcon.Close() 'Si una conexión está abierta, ciérrela

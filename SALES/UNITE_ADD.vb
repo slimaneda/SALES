@@ -1,9 +1,9 @@
 ﻿Public Class UNITE_ADD
 
 
-    Sub show_detait(ID)
+    Sub show_detait(ID_)
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE WHERE UNITE_CODE = '" & ID & "'", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM UNITE WHERE UNITE_CODE = '" & ID_ & "'", Sqlcon)
         da.Fill(dt)
 
         If dt.Rows.Count = 0 Then
@@ -30,7 +30,7 @@
     Private Sub Btn_now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         Text_code.Text = ""
         Text_name.Text = ""
-        Text_code.Text = CODE_GEN("UNITE", "ID") + 1
+        Text_code.Text = CODE_GEN("UNITE", "UNITE_CODE") + 1
         Btn_delete.Enabled = False
         Btn_save.Enabled = True
         Btn_edit.Enabled = False
@@ -53,7 +53,7 @@
             da.Fill(dt)
             DataGridView1.DataSource = dt.DefaultView
 
-            If dt.Rows.Count = 0 Then
+            If Text_name.Text = "" Then
                 MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Else
                 dt.Rows.Add()
@@ -73,7 +73,7 @@
 
     Private Sub UNITE_ADD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Btn_now_Click(sender, e)
-        'DGV_FILL(DataGridView1, "SELECT * FROM UNITE")
+        DGV_FILL(DataGridView1, "SELECT * FROM UNITE")
 
 
     End Sub

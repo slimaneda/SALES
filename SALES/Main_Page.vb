@@ -4,7 +4,7 @@
         Panel3.Location = New Point(0, 151)
 
     End Sub
-    Sub switchpanel(ByVal panel As Form)
+    Public Sub switchpanel(ByVal panel As Form)
         Panel2.Controls.Clear()
         panel.TopLevel = False
         Panel2.Controls.Add(panel)

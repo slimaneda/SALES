@@ -2,7 +2,10 @@
 
 
     Private Sub Search_sup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         DGV_FILL(DataGridView1, "SELECT * FROM IMPORTERS ORDER BY IMP_CODE")
+
+
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
@@ -47,5 +50,9 @@
 
         End If
 
+    End Sub
+
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Me.Close()
     End Sub
 End Class

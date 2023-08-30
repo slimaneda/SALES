@@ -3,7 +3,7 @@
 
     Sub show_detait(ID_)
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ID = '" & ID_ & "'", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS WHERE ITEM_CODE = '" & ID_ & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show("ل توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -46,7 +46,7 @@
             If TypeOf GroupBox1.Controls(i) Is DateTimePicker Then GroupBox1.Controls(i).Text = New Date
         Next
         CheckBox1.Checked = False
-        Text_code.Text = CODE_GEN("ITEMS", "ID") + 1
+        Text_code.Text = CODE_GEN("ITEMS", "ITEM_CODE") + 1
         Btn_back.Enabled = False
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
@@ -174,7 +174,7 @@
 
     Private Sub Btn_delete_Click(sender As Object, e As EventArgs) Handles Btn_delete.Click
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ID = '" & Text_code.Text & "'  or ITEM_CODE = '" & Text_barcode.Text & "' ", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM ITEMS where ITEM_CODE = '" & Text_code.Text & "'  or ITEM_BAR = '" & Text_barcode.Text & "' ", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show(" ITEMS غير موجود يرجى التاكد", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)

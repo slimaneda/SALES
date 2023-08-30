@@ -1,8 +1,8 @@
 ﻿Public Class Customers
 
-    Sub show_detait(ID)
+    Sub show_detait(ID_)
         Dim dt As New DataTable
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM CUSTOMERS WHERE CUS_CODE = '" & ID & "'", Sqlcon)
+        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM CUSTOMERS WHERE CUS_CODE = '" & ID_ & "'", Sqlcon)
         da.Fill(dt)
         If dt.Rows.Count = 0 Then
             MessageBox.Show("لا توجد بيانات ", " erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -24,12 +24,6 @@
     End Sub
 
 
-
-    Private Sub Btn_back_Click(sender As Object, e As EventArgs) Handles Btn_back.Click
-
-        Me.Hide()
-    End Sub
-
     Private Sub Btn_now_Click(sender As Object, e As EventArgs) Handles Btn_now.Click
         '--------------------clean textbox in groupbox---------------
         For I = 0 To GroupBox1.Controls.Count - 1
@@ -39,8 +33,8 @@
             If TypeOf GroupBox2.Controls(I) Is TextBox Then GroupBox1.Controls(I).Text = ""
         Next
         '----------------------- الترقيم وتوماتيكي
-        Text_code.Text = CODE_GEN("CUSTOMERS", "ID") + 1
-        Btn_back.Enabled = False
+        Text_code.Text = CODE_GEN("CUSTOMERS", "CUS_CODE") + 1
+
         Btn_delete.Enabled = False
         Btn_edit.Enabled = False
         Btn_save.Enabled = True
@@ -48,10 +42,13 @@
         Text_credit.Text = "0.000"
         Text_diff.Text = "0.000"
         Tex_name.Select()
+        '=================
+        Label11.Text = "Phone numbre :"
     End Sub
 
     Private Sub Customers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Btn_now_Click(sender, e)
+        Label11.Text = "Phone numbre :"
     End Sub
 
     Private Sub Btn_save_Click(sender As Object, e As EventArgs) Handles Btn_save.Click
@@ -63,39 +60,41 @@
         Else
             ErrorProvider1.SetError(Tex_name, "")
             Tex_name.Select()
-        End If
-        If Text_phone.Text = "" Then
-            ErrorProvider1.SetError(Text_phone, "يرجى ادخال رقم الزبون")
-            Text_phone.Select()
-        Else
-            ErrorProvider1.SetError(Text_phone, "")
-        End If
-        '----------------------------------------------------------------------------
-        'code save------------------------------------------------------------------
-        Dim dt As New DataTable
-        'code save------------------------------------------------------------------
 
-        Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM CUSTOMERS where CUS_NAME = '" & Tex_name.Text & "'  or CUS_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
-        da.Fill(dt)
-        If dt.Rows.Count > 0 Then
-            MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Else
-            dt.Rows.Add()
-            Dim add_ As Integer = dt.Rows.Count - 1
-            dt.Rows(add_).Item("CUS_CODE") = Text_code.Text
-            dt.Rows(add_).Item("CUS_NAME") = Tex_name.Text
-            dt.Rows(add_).Item("CUS_PHONE") = Text_phone.Text
-            dt.Rows(add_).Item("CUS_ADRESS") = Text_adress.Text
-            dt.Rows(add_).Item("NOTES") = Text_notes.Text
-            dt.Rows(add_).Item("STATES") = True
-            dt.Rows(add_).Item("COMPANY") = Text_company.Text
-            dt.Rows(add_).Item("DEBIT") = Val(Text_debit.Text)
-            dt.Rows(add_).Item("CREDIT") = Val(Text_credit.Text)
-            Dim sav As New SqlClient.SqlCommandBuilder(da)
-            da.Update(dt)
-            dt.AcceptChanges()
-            MessageBox.Show(" تم الحفظ بنجاح ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Btn_now_Click(sender, e)
+            If Text_phone.Text = "" Then
+                ErrorProvider1.SetError(Text_phone, "يرجى ادخال رقم الزبون")
+                Text_phone.Select()
+            Else
+                ErrorProvider1.SetError(Text_phone, "")
+
+                '----------------------------------------------------------------------------
+                'code save------------------------------------------------------------------
+                Dim dt As New DataTable
+                'code save------------------------------------------------------------------
+
+                Dim da As New SqlClient.SqlDataAdapter("SELECT * FROM CUSTOMERS where CUS_NAME = '" & Tex_name.Text & "'  or CUS_PHONE = '" & Text_phone.Text & "' ", Sqlcon)
+                da.Fill(dt)
+                If dt.Rows.Count > 0 Then
+                    MessageBox.Show(" بيانات غير موجودة ", "Carta de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Else
+                    dt.Rows.Add()
+                    Dim add_ As Integer = dt.Rows.Count - 1
+                    dt.Rows(add_).Item("CUS_CODE") = Text_code.Text
+                    dt.Rows(add_).Item("CUS_NAME") = Tex_name.Text
+                    dt.Rows(add_).Item("CUS_PHONE") = Text_phone.Text
+                    dt.Rows(add_).Item("CUS_ADRESS") = Text_adress.Text
+                    dt.Rows(add_).Item("NOTES") = Text_notes.Text
+                    'dt.Rows(add_).Item("STATES") = True
+                    dt.Rows(add_).Item("COMPANY") = Text_company.Text
+                    dt.Rows(add_).Item("DEBIT") = Val(Text_debit.Text)
+                    dt.Rows(add_).Item("CREDIT") = Val(Text_credit.Text)
+                    Dim sav As New SqlClient.SqlCommandBuilder(da)
+                    da.Update(dt)
+                    dt.AcceptChanges()
+                    MessageBox.Show(" تم الحفظ بنجاح ", "Mensaje de confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Btn_now_Click(sender, e)
+                End If
+            End If
         End If
     End Sub
 
@@ -127,7 +126,7 @@
             updateRow("CUS_PHONE") = Text_phone.Text
             updateRow("CUS_ADRESS") = Text_adress.Text
             updateRow("NOTES") = Text_notes.Text
-            updateRow("STATES") = True
+            'updateRow("STATES") = True
             updateRow("COMPANY") = Text_company.Text
             updateRow("DEBIT") = Val(Text_debit.Text)
             updateRow("CREDIT") = Val(Text_credit.Text)
@@ -168,6 +167,8 @@
 
     Private Sub Btn_Recherche_Click(sender As Object, e As EventArgs) Handles Btn_Recherche.Click
         Searche_cus.ShowDialog()
+
+
     End Sub
 
 

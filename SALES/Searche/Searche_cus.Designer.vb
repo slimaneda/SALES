@@ -22,6 +22,7 @@ Partial Class Searche_cus
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim IconButton2 As FontAwesome.Sharp.IconButton
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
@@ -29,8 +30,10 @@ Partial Class Searche_cus
         Column4 = New DataGridViewTextBoxColumn()
         Column5 = New DataGridViewTextBoxColumn()
         GroupBox1 = New GroupBox()
+        IconButton1 = New FontAwesome.Sharp.IconButton()
         ComboBox1 = New ComboBox()
         TextBox1 = New TextBox()
+        IconButton2 = New FontAwesome.Sharp.IconButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -86,6 +89,8 @@ Partial Class Searche_cus
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(IconButton2)
+        GroupBox1.Controls.Add(IconButton1)
         GroupBox1.Controls.Add(ComboBox1)
         GroupBox1.Controls.Add(TextBox1)
         GroupBox1.Controls.Add(DataGridView1)
@@ -93,19 +98,31 @@ Partial Class Searche_cus
         GroupBox1.Margin = New Padding(5, 6, 5, 6)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(5, 6, 5, 6)
-        GroupBox1.Size = New Size(781, 345)
+        GroupBox1.Size = New Size(781, 296)
         GroupBox1.TabIndex = 2
         GroupBox1.TabStop = False
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.IconSize = 15
+        IconButton1.Location = New Point(758, -3)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(22, 25)
+        IconButton1.TabIndex = 8
+        IconButton1.UseVisualStyleBackColor = True
         ' 
         ' ComboBox1
         ' 
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox1.FormattingEnabled = True
         ComboBox1.Items.AddRange(New Object() {"NAME", "PHONE"})
-        ComboBox1.Location = New Point(31, 32)
-        ComboBox1.Margin = New Padding(4, 4, 4, 4)
+        ComboBox1.Location = New Point(13, 32)
+        ComboBox1.Margin = New Padding(4)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(174, 29)
+        ComboBox1.Size = New Size(192, 29)
         ComboBox1.TabIndex = 5
         ' 
         ' TextBox1
@@ -114,17 +131,35 @@ Partial Class Searche_cus
         TextBox1.Location = New Point(253, 32)
         TextBox1.Margin = New Padding(5, 6, 5, 6)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(489, 29)
+        TextBox1.Size = New Size(378, 29)
         TextBox1.TabIndex = 3
+        TextBox1.PlaceholderText = "   Search"
+        ' 
+        ' IconButton2
+        ' 
+        IconButton2.BackColor = Color.White
+        IconButton2.FlatStyle = FlatStyle.Flat
+        IconButton2.ForeColor = Color.Transparent
+        IconButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass
+        IconButton2.IconColor = Color.Black
+        IconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton2.IconSize = 25
+        IconButton2.ImageAlign = ContentAlignment.MiddleLeft
+        IconButton2.Location = New Point(594, 33)
+        IconButton2.Name = "IconButton2"
+        IconButton2.Size = New Size(34, 25)
+        IconButton2.TabIndex = 9
+        IconButton2.UseVisualStyleBackColor = False
         ' 
         ' Searche_cus
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(781, 349)
+        ClientSize = New Size(781, 297)
         Controls.Add(GroupBox1)
         Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Margin = New Padding(4, 4, 4, 4)
+        FormBorderStyle = FormBorderStyle.None
+        Margin = New Padding(4)
         MaximizeBox = False
         MdiChildrenMinimizedAnchorBottom = False
         MinimizeBox = False
@@ -146,4 +181,5 @@ Partial Class Searche_cus
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
     Friend WithEvents Column4 As DataGridViewTextBoxColumn
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
 End Class

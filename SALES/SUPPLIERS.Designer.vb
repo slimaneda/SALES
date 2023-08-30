@@ -26,16 +26,15 @@ Partial Class SUPPLIERS
         Dim resources As ComponentModel.ComponentResourceManager = New ComponentModel.ComponentResourceManager(GetType(SUPPLIERS))
         GroupBox3 = New GroupBox()
         Btn_Recherche = New Button()
-        Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
         Btn_save = New Button()
         Btn_now = New Button()
         ToolTip1 = New ToolTip(components)
         GroupBox1 = New GroupBox()
+        Label5 = New Label()
         Text_phone = New TextBox()
         Label11 = New Label()
-        Label6 = New Label()
         GroupBox2 = New GroupBox()
         Text_diff = New TextBox()
         Label9 = New Label()
@@ -52,6 +51,7 @@ Partial Class SUPPLIERS
         Label2 = New Label()
         Text_code = New TextBox()
         Label1 = New Label()
+        IconButton1 = New FontAwesome.Sharp.IconButton()
         GroupBox3.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -59,8 +59,8 @@ Partial Class SUPPLIERS
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(IconButton1)
         GroupBox3.Controls.Add(Btn_Recherche)
-        GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
@@ -75,25 +75,13 @@ Partial Class SUPPLIERS
         ' 
         Btn_Recherche.Image = CType(resources.GetObject("Btn_Recherche.Image"), Image)
         Btn_Recherche.ImageAlign = ContentAlignment.MiddleRight
-        Btn_Recherche.Location = New Point(618, 18)
+        Btn_Recherche.Location = New Point(498, 18)
         Btn_Recherche.Name = "Btn_Recherche"
         Btn_Recherche.Size = New Size(117, 34)
         Btn_Recherche.TabIndex = 5
         Btn_Recherche.Text = "Buscar"
         ToolTip1.SetToolTip(Btn_Recherche, "back")
         Btn_Recherche.UseVisualStyleBackColor = True
-        ' 
-        ' Btn_back
-        ' 
-        Btn_back.Image = CType(resources.GetObject("Btn_back.Image"), Image)
-        Btn_back.ImageAlign = ContentAlignment.MiddleRight
-        Btn_back.Location = New Point(498, 18)
-        Btn_back.Name = "Btn_back"
-        Btn_back.Size = New Size(117, 34)
-        Btn_back.TabIndex = 4
-        Btn_back.Text = "Atrás"
-        ToolTip1.SetToolTip(Btn_back, "back")
-        Btn_back.UseVisualStyleBackColor = True
         ' 
         ' Btn_delete
         ' 
@@ -146,9 +134,9 @@ Partial Class SUPPLIERS
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(Text_phone)
         GroupBox1.Controls.Add(Label11)
-        GroupBox1.Controls.Add(Label6)
         GroupBox1.Controls.Add(GroupBox2)
         GroupBox1.Controls.Add(Text_notes)
         GroupBox1.Controls.Add(Text_company)
@@ -166,12 +154,21 @@ Partial Class SUPPLIERS
         GroupBox1.TabStop = False
         GroupBox1.Text = "Basic Information:"
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(452, 165)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(58, 21)
+        Label5.TabIndex = 10
+        Label5.Text = "Notes :"
+        ' 
         ' Text_phone
         ' 
         Text_phone.Location = New Point(545, 90)
         Text_phone.Name = "Text_phone"
         Text_phone.Size = New Size(269, 29)
-        Text_phone.TabIndex = 15
+        Text_phone.TabIndex = 7
         ' 
         ' Label11
         ' 
@@ -180,18 +177,8 @@ Partial Class SUPPLIERS
         Label11.Location = New Point(419, 93)
         Label11.Name = "Label11"
         Label11.Size = New Size(120, 21)
-        Label11.TabIndex = 14
+        Label11.TabIndex = 6
         Label11.Text = "Phone numbre :" & vbCrLf
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point)
-        Label6.Location = New Point(441, 174)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(58, 21)
-        Label6.TabIndex = 10
-        Label6.Text = "Notes :" & vbCrLf
         ' 
         ' GroupBox2
         ' 
@@ -280,7 +267,7 @@ Partial Class SUPPLIERS
         Text_company.Location = New Point(127, 90)
         Text_company.Name = "Text_company"
         Text_company.Size = New Size(220, 29)
-        Text_company.TabIndex = 7
+        Text_company.TabIndex = 5
         ' 
         ' Label4
         ' 
@@ -289,7 +276,7 @@ Partial Class SUPPLIERS
         Label4.Location = New Point(10, 93)
         Label4.Name = "Label4"
         Label4.Size = New Size(64, 21)
-        Label4.TabIndex = 6
+        Label4.TabIndex = 4
         Label4.Text = "Adress :" & vbCrLf
         ' 
         ' Text_adress
@@ -297,7 +284,7 @@ Partial Class SUPPLIERS
         Text_adress.Location = New Point(143, 138)
         Text_adress.Name = "Text_adress"
         Text_adress.Size = New Size(263, 29)
-        Text_adress.TabIndex = 5
+        Text_adress.TabIndex = 9
         ' 
         ' Label3
         ' 
@@ -306,12 +293,12 @@ Partial Class SUPPLIERS
         Label3.Location = New Point(10, 138)
         Label3.Name = "Label3"
         Label3.Size = New Size(127, 21)
-        Label3.TabIndex = 4
+        Label3.TabIndex = 8
         Label3.Text = "Company name :" & vbCrLf
         ' 
         ' Tex_name
         ' 
-        Tex_name.Location = New Point(469, 44)
+        Tex_name.Location = New Point(469, 40)
         Tex_name.Name = "Tex_name"
         Tex_name.Size = New Size(345, 29)
         Tex_name.TabIndex = 3
@@ -328,7 +315,7 @@ Partial Class SUPPLIERS
         ' 
         ' Text_code
         ' 
-        Text_code.Location = New Point(127, 44)
+        Text_code.Location = New Point(127, 41)
         Text_code.Name = "Text_code"
         Text_code.Size = New Size(88, 29)
         Text_code.TabIndex = 1
@@ -342,6 +329,19 @@ Partial Class SUPPLIERS
         Label1.Size = New Size(111, 21)
         Label1.TabIndex = 0
         Label1.Text = "Code Supplier:" & vbCrLf
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.IconSize = 30
+        IconButton1.ImageAlign = ContentAlignment.TopCenter
+        IconButton1.Location = New Point(621, 18)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(34, 34)
+        IconButton1.TabIndex = 6
+        IconButton1.UseVisualStyleBackColor = True
         ' 
         ' SUPPLIERS
         ' 
@@ -368,7 +368,6 @@ Partial Class SUPPLIERS
         ResumeLayout(False)
     End Sub
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents Btn_back As Button
     Friend WithEvents Btn_delete As Button
     Friend WithEvents Btn_edit As Button
     Friend WithEvents Btn_save As Button
@@ -378,7 +377,6 @@ Partial Class SUPPLIERS
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Text_phone As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label6 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Text_diff As TextBox
     Friend WithEvents Label9 As Label
@@ -395,4 +393,6 @@ Partial Class SUPPLIERS
     Friend WithEvents Label2 As Label
     Friend WithEvents Text_code As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
 End Class

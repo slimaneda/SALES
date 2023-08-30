@@ -22,6 +22,7 @@ Partial Class Search_sup
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim IconButton2 As FontAwesome.Sharp.IconButton
         DataGridView1 = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
@@ -29,9 +30,11 @@ Partial Class Search_sup
         Column4 = New DataGridViewTextBoxColumn()
         Column5 = New DataGridViewTextBoxColumn()
         GroupBox1 = New GroupBox()
+        IconButton1 = New FontAwesome.Sharp.IconButton()
         RadioButton2 = New RadioButton()
         RadioButton1 = New RadioButton()
         TextBox1 = New TextBox()
+        IconButton2 = New FontAwesome.Sharp.IconButton()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -87,6 +90,8 @@ Partial Class Search_sup
         ' 
         ' GroupBox1
         ' 
+        GroupBox1.Controls.Add(IconButton2)
+        GroupBox1.Controls.Add(IconButton1)
         GroupBox1.Controls.Add(RadioButton2)
         GroupBox1.Controls.Add(RadioButton1)
         GroupBox1.Controls.Add(TextBox1)
@@ -95,9 +100,21 @@ Partial Class Search_sup
         GroupBox1.Margin = New Padding(4)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Padding = New Padding(4)
-        GroupBox1.Size = New Size(781, 285)
+        GroupBox1.Size = New Size(782, 296)
         GroupBox1.TabIndex = 1
         GroupBox1.TabStop = False
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.IconSize = 15
+        IconButton1.Location = New Point(759, 0)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(22, 25)
+        IconButton1.TabIndex = 7
+        IconButton1.UseVisualStyleBackColor = True
         ' 
         ' RadioButton2
         ' 
@@ -129,9 +146,26 @@ Partial Class Search_sup
         TextBox1.Location = New Point(229, 48)
         TextBox1.Margin = New Padding(4)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(381, 29)
+        TextBox1.Size = New Size(308, 29)
         TextBox1.TabIndex = 3
-
+        TextBox1.PlaceholderText = "   Search"
+        ' 
+        ' IconButton2
+        ' 
+        IconButton2.BackColor = Color.White
+        IconButton2.FlatStyle = FlatStyle.Flat
+        IconButton2.ForeColor = Color.Transparent
+        IconButton2.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass
+        IconButton2.IconColor = Color.Black
+        IconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton2.IconSize = 25
+        IconButton2.ImageAlign = ContentAlignment.MiddleLeft
+        IconButton2.Location = New Point(500, 50)
+        IconButton2.Name = "IconButton2"
+        IconButton2.Size = New Size(34, 25)
+        IconButton2.TabIndex = 8
+        IconButton2.UseVisualStyleBackColor = False
+        ' 
         ' Search_sup
         ' 
         AutoScaleDimensions = New SizeF(9.0F, 21.0F)
@@ -162,4 +196,6 @@ Partial Class Search_sup
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
 End Class

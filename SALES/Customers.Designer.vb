@@ -46,13 +46,13 @@ Partial Class Customers
         Label11 = New Label()
         ToolTip1 = New ToolTip(components)
         Btn_Recherche = New Button()
-        Btn_back = New Button()
         Btn_delete = New Button()
         Btn_edit = New Button()
         Btn_save = New Button()
         Btn_now = New Button()
         GroupBox3 = New GroupBox()
         ErrorProvider1 = New ErrorProvider(components)
+        IconButton1 = New FontAwesome.Sharp.IconButton()
         GroupBox2.SuspendLayout()
         GroupBox1.SuspendLayout()
         GroupBox3.SuspendLayout()
@@ -262,25 +262,13 @@ Partial Class Customers
         ' 
         Btn_Recherche.Image = CType(resources.GetObject("Btn_Recherche.Image"), Image)
         Btn_Recherche.ImageAlign = ContentAlignment.MiddleRight
-        Btn_Recherche.Location = New Point(618, 18)
+        Btn_Recherche.Location = New Point(498, 18)
         Btn_Recherche.Name = "Btn_Recherche"
         Btn_Recherche.Size = New Size(117, 34)
         Btn_Recherche.TabIndex = 5
         Btn_Recherche.Text = "Buscar"
         ToolTip1.SetToolTip(Btn_Recherche, "back")
         Btn_Recherche.UseVisualStyleBackColor = True
-        ' 
-        ' Btn_back
-        ' 
-        Btn_back.Image = CType(resources.GetObject("Btn_back.Image"), Image)
-        Btn_back.ImageAlign = ContentAlignment.MiddleRight
-        Btn_back.Location = New Point(498, 18)
-        Btn_back.Name = "Btn_back"
-        Btn_back.Size = New Size(117, 34)
-        Btn_back.TabIndex = 4
-        Btn_back.Text = "Atrás"
-        ToolTip1.SetToolTip(Btn_back, "back")
-        Btn_back.UseVisualStyleBackColor = True
         ' 
         ' Btn_delete
         ' 
@@ -333,8 +321,8 @@ Partial Class Customers
         ' 
         ' GroupBox3
         ' 
+        GroupBox3.Controls.Add(IconButton1)
         GroupBox3.Controls.Add(Btn_Recherche)
-        GroupBox3.Controls.Add(Btn_back)
         GroupBox3.Controls.Add(Btn_delete)
         GroupBox3.Controls.Add(Btn_edit)
         GroupBox3.Controls.Add(Btn_save)
@@ -348,6 +336,19 @@ Partial Class Customers
         ' ErrorProvider1
         ' 
         ErrorProvider1.ContainerControl = Me
+        ' 
+        ' IconButton1
+        ' 
+        IconButton1.IconChar = FontAwesome.Sharp.IconChar.X
+        IconButton1.IconColor = Color.Black
+        IconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto
+        IconButton1.IconSize = 30
+        IconButton1.ImageAlign = ContentAlignment.TopCenter
+        IconButton1.Location = New Point(621, 18)
+        IconButton1.Name = "IconButton1"
+        IconButton1.Size = New Size(34, 34)
+        IconButton1.TabIndex = 7
+        IconButton1.UseVisualStyleBackColor = True
         ' 
         ' Customers
         ' 
@@ -395,11 +396,11 @@ Partial Class Customers
     Friend WithEvents Label11 As Label
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents Btn_Recherche As Button
-    Friend WithEvents Btn_back As Button
     Friend WithEvents Btn_delete As Button
     Friend WithEvents Btn_edit As Button
     Friend WithEvents Btn_save As Button
     Friend WithEvents Btn_now As Button
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
 End Class
